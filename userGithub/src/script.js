@@ -1,5 +1,7 @@
 // id
 const container = document.getElementById('container')
+const content   = document.getElementById('content')
+const addUserGithub = document.querySelector('[data-js="add-user"]')
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
@@ -19,8 +21,23 @@ db.collection('userGithub').get()
 					<span class="data">${createdAt.toDate()}</span>
 				</section>
 			` 
-			container.innerHTML += docsHtml
+			content.innerHTML += docsHtml
 	})
 }).catch((err) => {
 		console.log(err.menssage)
+})
+
+
+addUserGithub.addEventListener('submit', (e) => {
+	e.preventDefault()
+
+	db.collection('userGithub').add({
+		name: e.target.user.value,
+		createdAt: firebase.firestore.FieldValue.serverTimestamp()
+	})
+	.then(() => {
+		console.log('add sucessFull')
+	}).catch(err => {
+		console.log(err.menssage)
+	})
 })
