@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: auto;
+
+	display: grid;
+	place-items: center;
+
+	background: #242424;
+	color: #FFF;
+}
+
+#container {
+	width: 510px;
+}
+#container form {
+	margin: 30px 0px 20px 0px;
+}
+#container form input {
+	padding: 8px;
+	width: 300px;
+}
+
+#content {
+	border-top: 5px solid purple;
+	padding-top: 8px;
+}
+#content .card {
+	border-radius: 8px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+
+	margin-bottom: 15px;
+	padding: 10px;
+
+	background-color: #fff;
+	color: black;
+}
