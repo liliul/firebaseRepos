@@ -16,10 +16,12 @@ db.collection('userGithub').get()
 			const {name, createdAt} = doc.data()
 
 			const docsHtml = `
-				<section class="card">
+				<section class="card" data-card="${doc.id}">
 					<h1>${name}</h1>
 					<br>
 					<span class="data">${createdAt.toDate()}</span>
+					<hr>
+					<button data-remove="${doc.id}">Deletar</button>
 				</section>
 			` 
 			content.innerHTML += docsHtml
@@ -55,4 +57,13 @@ updateUserGithub.addEventListener('submit', (e) => {
 	}).catch(err => {
 		console.log(err.menssage)
 	})
+})
+
+content.addEventListener('click', (e) => {
+	db.collection('userGithub').doc('nVcokFnR04QdsOEs7rxb').delete()
+		.then(() => {
+			console.log('delete sucessFull')
+		}).catch((err) => {
+			console.log(err)
+		})
 })
