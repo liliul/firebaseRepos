@@ -2,6 +2,7 @@
 const container = document.getElementById('container')
 const content   = document.getElementById('content')
 const addUserGithub = document.querySelector('[data-js="add-user"]')
+const updateUserGithub = document.querySelector('[data-js="up-user"]')
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
@@ -37,6 +38,20 @@ addUserGithub.addEventListener('submit', (e) => {
 	})
 	.then(() => {
 		console.log('add sucessFull')
+	}).catch(err => {
+		console.log(err.menssage)
+	})
+})
+
+updateUserGithub.addEventListener('submit', (e) => {
+	e.preventDefault()
+
+	db.collection('userGithub').doc('RS4o4QiumsrDxooAQkCQ').update({
+		name: e.target.upUser.value,
+		createdAt: firebase.firestore.FieldValue.serverTimestamp()
+	})
+	.then(() => {
+		console.log('update sucessFull')
 	}).catch(err => {
 		console.log(err.menssage)
 	})
