@@ -60,10 +60,19 @@ updateUserGithub.addEventListener('submit', (e) => {
 })
 
 content.addEventListener('click', (e) => {
-	db.collection('userGithub').doc('nVcokFnR04QdsOEs7rxb').delete()
+	const remove = e.target.dataset.remove
+	
+	if (remove) {
+		db.collection('userGithub').doc(remove).delete()
 		.then(() => {
+			const removeHtml = document.querySelector(`[data-card="${remove}"]`)
+			removeHtml.remove()
+			
 			console.log('delete sucessFull')
-		}).catch((err) => {
-			console.log(err)
 		})
+		.catch((err) => {
+			console.log(err)
+		})	
+	}
+	
 })
