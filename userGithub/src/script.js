@@ -22,6 +22,7 @@ db.collection('userGithub').get()
 					<span class="data">${createdAt.toDate()}</span>
 					<hr>
 					<button data-remove="${doc.id}">Deletar</button>
+					<button id="editarDocs" data-editar="${doc.id}">Editar</button>
 				</section>
 			` 
 			content.innerHTML += docsHtml
@@ -45,19 +46,61 @@ addUserGithub.addEventListener('submit', (e) => {
 	})
 })
 
-updateUserGithub.addEventListener('submit', (e) => {
-	e.preventDefault()
+content.addEventListener('click', function(evt) {
+	const editarDataset = evt.target.dataset.editar
+	console.log(editarDataset)
 
-	db.collection('userGithub').doc('96P0JtCkFjTupIS7U7mK').set({
-		name: e.target.upUser.value,
-		// createdAt: firebase.firestore.FieldValue.serverTimestamp()
-	}, { merge: true })
-	.then(() => {
-		console.log('update sucessFull')
-	}).catch(err => {
-		console.log(err.menssage)
-	})
+	if (editarDataset) {
+		db.collection('userGithub').doc(editarDataset).get()
+			.then((doc) => {
+				const modalHtml = document.createElement('section')
+				modalHtml.setAttribute('id', 'modal')
+				modalHtml.classList.add('modal')
+
+				modalHtml.innerHTML = `
+					<form data-js="up-user">
+						<span data-fechar="fechar">fechar</span>
+						<label for="upUser">Atualizando Usuario ></label>
+						<input type="text" id="upUser" name="upUser" placeholder="${doc.data().name}">
+						<p class="vazio"></p>
+					</form>
+				`
+				content.appendChild(modalHtml)
+				
+				const updateUser = document.querySelector('[data-js="up-user"]')
+
+				updateUser.addEventListener('submit', (e) => {
+					e.preventDefault()
+					if (e.target.upUser.value === ''){
+
+						document.querySelector('.vazio').innerHTML = 'campo vazio'
+						return
+					}
+
+					db.collection('userGithub').doc(`${editarDataset}`).update({
+						name: e.target.upUser.value,
+						createdAt: firebase.firestore.FieldValue.serverTimestamp()
+					})
+					.then(() => {
+						const fecharModal = document.querySelector('#modal')
+						fecharModal.remove()
+
+						setTimeout(() => {
+							window.location = '/'
+						}, 1000)
+
+						console.log('update sucessFull')
+					}).catch(err => {
+						console.log(err.menssage)
+					})
+				})			
+			})
+			.catch((err) => console.log(err.menssage))
+		
+	}
+
 })
+
 
 content.addEventListener('click', (e) => {
 	const remove = e.target.dataset.remove
