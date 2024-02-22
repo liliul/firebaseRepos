@@ -48,10 +48,10 @@ addUserGithub.addEventListener('submit', (e) => {
 updateUserGithub.addEventListener('submit', (e) => {
 	e.preventDefault()
 
-	db.collection('userGithub').doc('RS4o4QiumsrDxooAQkCQ').update({
+	db.collection('userGithub').doc('96P0JtCkFjTupIS7U7mK').set({
 		name: e.target.upUser.value,
-		createdAt: firebase.firestore.FieldValue.serverTimestamp()
-	})
+		// createdAt: firebase.firestore.FieldValue.serverTimestamp()
+	}, { merge: true })
 	.then(() => {
 		console.log('update sucessFull')
 	}).catch(err => {
