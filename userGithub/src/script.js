@@ -61,7 +61,7 @@ content.addEventListener('click', function(evt) {
 					<form data-js="up-user">
 						<span data-fechar="fechar">fechar</span>
 						<label for="upUser">Atualizando Usuario ></label>
-						<input type="text" id="upUser" name="upUser" placeholder="${doc.data().name}">
+						<input type="text" id="upUser" name="upUser" value="${doc.data().name}">
 						<p class="vazio"></p>
 					</form>
 				`
@@ -96,7 +96,6 @@ content.addEventListener('click', function(evt) {
 				})			
 			})
 			.catch((err) => console.log(err.menssage))
-		
 	}
 
 })
@@ -119,3 +118,4 @@ content.addEventListener('click', (e) => {
 	}
 	
 })
+	
