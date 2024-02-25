@@ -10,26 +10,26 @@ const auth = firebaseApp.auth();
 
 // console.log(firebaseApp)
 
-db.collection('userGithub').get()
-	.then((snapshot) => {
-		const mostrarDocs = snapshot.docs.forEach(doc => {
-			const {name, createdAt} = doc.data()
+// db.collection('userGithub').get()
+// 	.then((snapshot) => {
+// 		const mostrarDocs = snapshot.docs.forEach(doc => {
+// 			const {name, createdAt} = doc.data()
 
-			const docsHtml = `
-				<section class="card" data-card="${doc.id}">
-					<h1>${name}</h1>
-					<br>
-					<span class="data">${createdAt.toDate()}</span>
-					<hr>
-					<button data-remove="${doc.id}">Deletar</button>
-					<button id="editarDocs" data-editar="${doc.id}">Editar</button>
-				</section>
-			` 
-			content.innerHTML += docsHtml
-	})
-}).catch((err) => {
-		console.log(err.menssage)
-})
+// 			const docsHtml = `
+// 				<section class="card" data-card="${doc.id}">
+// 					<h1>${name}</h1>
+// 					<br>
+// 					<span class="data">${createdAt.toDate()}</span>
+// 					<hr>
+// 					<button data-remove="${doc.id}">Deletar</button>
+// 					<button id="editarDocs" data-editar="${doc.id}">Editar</button>
+// 				</section>
+// 			` 
+// 			content.innerHTML += docsHtml
+// 	})
+// }).catch((err) => {
+// 		console.log(err.menssage)
+// })
 
 
 addUserGithub.addEventListener('submit', (e) => {
@@ -85,9 +85,9 @@ content.addEventListener('click', function(evt) {
 						const fecharModal = document.querySelector('#modal')
 						fecharModal.remove()
 
-						setTimeout(() => {
-							window.location = '/'
-						}, 1000)
+						// setTimeout(() => {
+						// 	window.location = '/'
+						// }, 1000)
 
 						console.log('update sucessFull')
 					}).catch(err => {
@@ -118,4 +118,22 @@ content.addEventListener('click', (e) => {
 	}
 	
 })
-	
+
+db.collection('userGithub').onSnapshot((doc) => {
+	doc.docs.map((doc) => {
+		console.log(doc.data())
+		const {name, createdAt} = doc.data()
+		const docsHtml = document.createElement('div')
+		docsHtml.innerHTML = `
+			<section class="card" data-card="${doc.id}">
+				<h1>${name}</h1>
+				<br>
+				<span class="data">${createdAt}</span>
+				<hr>
+				<button data-remove="${doc.id}">Deletar</button>
+				<button id="editarDocs" data-editar="${doc.id}">Editar</button>
+			</section>
+		` 
+		content.appendChild(docsHtml)
+	})
+})	
