@@ -120,6 +120,8 @@ content.addEventListener('click', (e) => {
 })
 
 db.collection('userGithub').onSnapshot((doc) => {
+	content.innerHTML = ''
+	
 	doc.docs.map((doc) => {
 		console.log(doc.data())
 		const {name, createdAt} = doc.data()
