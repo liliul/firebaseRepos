@@ -32,8 +32,11 @@ const auth = firebaseApp.auth();
 // })
 
 
-addUserGithub.addEventListener('submit', (e) => {
+addUserGithub.addEventListener('submit', async (e) => {
 	e.preventDefault()
+	if(e.target.user.value === '') return
+
+	await getApiGithub(e.target.user.value)
 
 	db.collection('userGithub').add({
 		name: e.target.user.value,
@@ -151,4 +154,4 @@ const getApiGithub = async (name) => {
 
 	return console.log(res)
 }	
-getApiGithub('liliul')
+// getApiGithub('liliul')
