@@ -142,4 +142,13 @@ db.collection('userGithub').onSnapshot((doc) => {
 			content.appendChild(docsHtml)
 		}	
 	})
-})	
+})
+
+// api github
+const getApiGithub = async (name) => {
+	const req = await fetch(`https://api.github.com/users/${name}`);
+	const res =  await req.json();
+
+	return console.log(res)
+}	
+getApiGithub('liliul')
