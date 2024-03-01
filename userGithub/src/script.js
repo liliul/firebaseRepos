@@ -40,6 +40,7 @@ addUserGithub.addEventListener('submit', (e) => {
 		createdAt: firebase.firestore.FieldValue.serverTimestamp()
 	})
 	.then(() => {
+		e.target.user.value = ''
 		console.log('add sucessFull')
 	}).catch(err => {
 		console.log(err.menssage)
@@ -67,6 +68,7 @@ content.addEventListener('click', function(evt) {
 				`
 				content.appendChild(modalHtml)
 				
+				// updateUser
 				const updateUser = document.querySelector('[data-js="up-user"]')
 
 				updateUser.addEventListener('submit', (e) => {
