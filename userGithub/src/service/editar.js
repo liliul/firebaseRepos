@@ -11,7 +11,7 @@ content.addEventListener('click', function(evt) {
 
 				modalHtml.innerHTML = `
 					<form data-js="up-user">
-						<span data-fechar="fechar">fechar</span>
+						<span class="fechar">fechar</span>
 						<label for="upUser">Atualizando Usuario ></label>
 						<input type="text" id="upUser" name="upUser" value="${doc.data().name}">
 						<p class="vazio"></p>
@@ -19,6 +19,18 @@ content.addEventListener('click', function(evt) {
 				`
 				content.appendChild(modalHtml)
 				
+				const modalCard = document.querySelector('.modal')
+				modalCard.addEventListener('click', (e) => {
+					const eventFechar = e.target.classList[0]
+
+					const classNames = ['fechar','modal']
+
+					const clickClass = classNames.some(className => className === eventFechar)
+					if (clickClass) {
+						modalCard.remove()
+					}
+				})
+
 				// updateUser
 				const updateUser = document.querySelector('[data-js="up-user"]')
 
