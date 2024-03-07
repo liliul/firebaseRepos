@@ -28,7 +28,7 @@ addUserGithub.addEventListener('submit', async (e) => {
 		 * @description // adicionado items no firestore
 		*/
 		db.collection('userGithub').add({
-			name: e.target.user.value,
+			name: result.name,
 			createdAt: firebase.firestore.FieldValue.serverTimestamp()
 		})
 		.then(() => {
