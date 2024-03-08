@@ -68,3 +68,30 @@ button {
 	height: 100px;
 	background-color: #212121;
 }
+
+
+/* notificação discord */
+.discord {
+	position: relative;
+}
+
+.discord::before {
+	content: attr(data-notifica);
+
+	width: 20px;
+	height: 20px;
+
+	background-color: tomato;
+	
+	border-radius: 50%;
+
+	font-size: 12px;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
