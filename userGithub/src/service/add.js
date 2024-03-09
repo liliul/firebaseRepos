@@ -23,7 +23,7 @@ addUserGithub.addEventListener('submit', async (e) => {
 		*/
 		if(result.id === undefined) return
 		console.log(result)
-
+		if (result.name === null) return alert('Usuario github null')
 		/**
 		 * @description // adicionado items no firestore
 		*/
