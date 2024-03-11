@@ -12,7 +12,7 @@ content.addEventListener('click', function(evt) {
 				modalHtml.innerHTML = `
 					<form data-js="up-user">
 						<span class="fechar">fechar</span>
-						<label for="upUser">Atualizando Usuario ></label>
+						<label for="upUser">Editar Usuario</label>
 						<input type="text" id="upUser" name="upUser" value="${doc.data().name}">
 						<p class="vazio"></p>
 					</form>

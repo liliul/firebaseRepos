@@ -65,8 +65,21 @@ button {
   align-items: center;
 }
 .modal form {
-	height: 100px;
+	width: 610px;
+	height: 210px;
 	background-color: #212121;
+
+	padding: 10px;
+	border-radius: 8px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.modal form #upUser{
+	width: 100%;
+
+	margin: 15px 0px 0px 0px;
 }
 
 
