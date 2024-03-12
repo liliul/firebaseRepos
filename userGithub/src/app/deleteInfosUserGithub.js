@@ -4,9 +4,6 @@ content.addEventListener('click', (e) => {
 	if (remove) {
 		db.collection('infos-github').doc(remove).delete()
 		.then(() => {
-			// const removeHtml = document.querySelector(`[data-card="${remove}"]`)
-			// removeHtml.remove()
-			
 			console.log('delete sucessFull')
 		})
 		.catch((err) => {

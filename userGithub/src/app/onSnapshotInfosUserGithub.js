@@ -5,6 +5,7 @@ db.collection('infos-github').onSnapshot((doc) => {
 		console.log(doc.data())
 		if (!doc.metadata.hasPendingWrites) {
 			const {id, name, login, avatar, createdAt} = doc.data()
+			
 			const docsHtml = document.createElement('div')
 			docsHtml.innerHTML = `
 				<section class="card" data-card="${doc.id}">

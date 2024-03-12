@@ -48,11 +48,9 @@ addUserGithub.addEventListener('submit', async (e) => {
 	
 })
 
-// api github
 const getApiGithub = async (name) => {
 	const req = await fetch(`https://api.github.com/users/${name}`);
 	const res =  await req.json();
 
 	return res
 }	
-// getApiGithub('liliul')
