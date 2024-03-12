@@ -22,8 +22,8 @@ db.collection('infos-github').onSnapshot((doc) => {
 					</article>
 					<span class="data">${createdAt.toDate()}</span>
 					<br>
+					<br>
 					<button data-remove="${doc.id}">Deletar</button>
-					<button id="editarDocs" data-editar="${doc.id}">Editar</button>
 				</section>
 			` 
 			content.appendChild(docsHtml)
