@@ -121,8 +121,12 @@ button {
 
 /* index links */
 .link-index {
-	margin: 20px 0px 0px 0px;
 }
 .link-index button {
-	padding: 8px 20px;
+	padding: 10px 40px;
+	margin: 20px 0px 0px 0px;
+	background-color: purple;
+	color: white;
+	font-weight: bold;
+	border: 0;
 }
