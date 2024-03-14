@@ -118,3 +118,11 @@ button {
 	width: 100%;
 	height: 120px;
 }
+
+/* index links */
+.link-index {
+	margin: 20px 0px 0px 0px;
+}
+.link-index button {
+	padding: 8px 20px;
+}
