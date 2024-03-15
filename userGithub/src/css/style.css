@@ -75,6 +75,14 @@ button {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+
+	animation: modalTop 2s;
+}
+
+@keyframes modalTop{
+	from {
+		transform: translateY(-100px);
+	}
 }
 .modal form #upUser{
 	width: 100%;
