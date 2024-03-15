@@ -8,30 +8,30 @@ addUserGithub.addEventListener('submit', async (e) => {
 		 *
 		 *  
 		*/
-		const resApi = await getApiGithub(e.target.user.value)
+			//const resApi = await getApiGithub(e.target.user.value)
 
 		/**
 		 * // if verifica se nome do usuario é valido se nao retorna alert
 		*/
-		if(resApi.message === 'Not Found') {
-			return alert('Nome do github invalido')
-		}
+			// if(resApi.message === 'Not Found') {
+			// 	return alert('Nome do github invalido')
+			// }
 
-		const result = {'id': resApi.id, 'name': resApi.name}
+			//const result = {'id': resApi.id, 'name': resApi.name}
 		/**
 		 * // if verifica se id do usuario é undefined e so retorna
 		*/
-		if(result.id === undefined) return alert('Id usuario github undefined')
-		console.log(result)
+			//if(result.id === undefined) return alert('Id usuario github undefined')
+			//console.log(result)
 		/**
 		 * // if verifica se name do usuario é null e retorna alert
 		*/
-		if (result.name === null) return alert('Usuario github null')
+			//if (result.name === null) return alert('Usuario github null')
 		/**
 		 * @description // adicionado items no firestore
 		*/
 		db.collection('userGithub').add({
-			name: result.name,
+			name: e.target.user.value.trim(),
 			createdAt: firebase.firestore.FieldValue.serverTimestamp()
 		})
 		.then(() => {
