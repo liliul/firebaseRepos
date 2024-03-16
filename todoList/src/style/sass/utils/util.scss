@@ -1,0 +1,53 @@
+// variaveis
+$black: #0D0D0D;
+
+$h1: #4EA8DE;
+$h1_cor: #5E60CE;
+
+$radius_i_b: 0.8rem;
+$input_active: #8284FA;
+$input_bg: #262626;
+
+$button_bg: #1E6F9F;
+$b_cor: white;
+$b_hover: #4EA8DE;
+
+$gap: 0.8rem;
+
+$counter_ted: #8284FA;
+
+$void_cor: #808080;
+
+$gray-400: #333333;
+$gray-100: #F2F2F2;
+
+$tasks_bg: #262626;
+
+
+// placeholder
+%flex_center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+%flex_column_center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+%counter {
+	background-color: #333333;
+	width: 2.2rem;
+	height: 2.0rem;
+	border-radius: 50%;
+	color: #D9D9D9;
+}
+
+%void_text {
+	font-size: 1.6rem;
+	font-family: 'Inter', sans-serif;
+	line-height: 140%;
+	font-weight: 700;
+	font-style: normal;
+}
