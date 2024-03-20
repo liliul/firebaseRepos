@@ -17,7 +17,7 @@ buttonTask.addEventListener('click', async () => {
                 input: eventInput,
                 taskCheck: 'checked'
             })
-            console.log('id': adicionarDocs.id)
+            console.log('id', adicionarDocs.id)
         } catch (e) {
             console.error('addDoc', e)
         }
