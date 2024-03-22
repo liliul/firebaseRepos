@@ -6,11 +6,10 @@ export const querySnapshot = await getDocs(collection(db, "todo-list"));
     const { input, taskCheck } = doc.data();
 
     const div = document.createElement('div')
-
     div.innerHTML = `
 		<article class="tasks">
 			<div class="checked">
-				<input type="checkbox" ${taskCheck} class="checked_input" name="nameCheck">
+				<input type="checkbox" ${taskCheck} class="checked_input" name="nameCheck" data-checked="${doc.id}">
 			</div>
 
 			<div class="tasks_text">
