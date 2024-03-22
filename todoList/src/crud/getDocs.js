@@ -13,7 +13,7 @@ export const querySnapshot = await getDocs(collection(db, "todo-list"));
 			</div>
 
 			<div class="tasks_text">
-				<p class="tasks-p">
+				<p class="tasks-p" data-through="${doc.id}">
 					${input}
 				</p>
 			</div>
@@ -28,4 +28,10 @@ export const querySnapshot = await getDocs(collection(db, "todo-list"));
 		</article>
 	`
 	document.querySelector('#add-task').appendChild(div)
+
+	if (taskCheck) {
+		document.querySelector(`[data-through="${doc.id}"]`).setAttribute('style', 'text-decoration:line-through;');
+	}else {
+		document.querySelector(`[data-through="${doc.id}"]`).removeAttribute('style');
+	}
  });
