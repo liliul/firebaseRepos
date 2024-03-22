@@ -15,7 +15,7 @@ buttonTask.addEventListener('click', async () => {
         try {
             const adicionarDocs = await addDoc(collection(db, 'todo-list'), {
                 input: eventInput,
-                taskCheck: 'checked'
+                taskCheck: ""
             })
             console.log('id', adicionarDocs.id)
         } catch (e) {
