@@ -4,3 +4,5 @@ import './crud/getDocs.js'
 import './crud/addDocs.js'
 import './crud/delDocs.js'
 import './crud/putDocs.js'
+
+import './utils/createTasksLength.js'
