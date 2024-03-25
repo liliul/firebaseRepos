@@ -7,25 +7,33 @@ const onSnap = (callback) => onSnapshot(collection(db, 'todo-list'), callback);
 window.addEventListener('DOMContentLoaded', () => {
 	onSnap(querySnapshot => {
 		// document.querySelector('#add-task').innerHTML = ''
-		let counter = 0;
+		let counter  = 0;
 		let counter2 = 0;
 		console.log('aa', querySnapshot.size)
 
-		if (querySnapshot.size === 0) return document.getElementById('task-create').innerText = counter;
+		if (querySnapshot.size === 0) {
+			document.getElementById('task-create').innerText = counter;
+			document.querySelector('.completed-counter').innerText = counter2;
+		}
 
-		querySnapshot.forEach((doc) => {
-			const { input, taskCheck } = doc.data();
-			if (input) {
-				document.getElementById('task-create').innerText = counter++ + 1;
-			}
-			if (!input) {
-				document.getElementById('task-create').innerText = 0;
-			}			
-			// console.log('aa', input, taskCheck, counter++)
-			if(taskCheck) {
-				document.querySelector('.completed-counter').innerText = counter2++ + 1;
-			}
-		})
+		if (querySnapshot.size > 0) {
+			querySnapshot.forEach((doc) => {
+				const { input, taskCheck } = doc.data();
+				if (input) {
+					document.getElementById('task-create').innerText = counter++ + 1;
+				}
+				// if (!input) {
+				// 	document.getElementById('task-create').innerText = 0;
+				// }			
+				// console.log('aa', input, taskCheck, counter++)
+				if(taskCheck) {
+					document.querySelector('.completed-counter').innerText = counter2++ + 1;
+					console.log('count')
+				}else {
+					document.querySelector('.completed-counter').innerText = counter2;
+				}
+			})
+		}
 
 	})
 })
