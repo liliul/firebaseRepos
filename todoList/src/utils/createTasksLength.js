@@ -9,6 +9,10 @@ window.addEventListener('DOMContentLoaded', () => {
 		// document.querySelector('#add-task').innerHTML = ''
 		let counter = 0;
 		let counter2 = 0;
+		console.log('aa', querySnapshot.size)
+
+		if (querySnapshot.size === 0) return document.getElementById('task-create').innerText = counter;
+
 		querySnapshot.forEach((doc) => {
 			const { input, taskCheck } = doc.data();
 			if (input) {
