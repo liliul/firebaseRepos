@@ -1,16 +1,16 @@
 import { db } from '../config/firestore.js';
-import { collection, onSnapshot} from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js';
+import { collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js';
 
 const onSnap = (callback) => onSnapshot(collection(db, 'todo-list'), callback);
 
 window.addEventListener('DOMContentLoaded', () => {
 	onSnap(querySnapshot => {
-		document.querySelector('#add-task').innerHTML = ''
+		document.querySelector('#add-task').innerHTML = '';
 
 		querySnapshot.forEach((doc) => {
 			const { input, taskCheck } = doc.data();
 
-			const div = document.createElement('div')
+			const div = document.createElement('div');
 			div.innerHTML = `
 				<article class="tasks">
 					<div class="checked">
@@ -31,12 +31,13 @@ window.addEventListener('DOMContentLoaded', () => {
 						</svg>
 					</div>
 				</article>
-			`
-			document.querySelector('#add-task').appendChild(div)
+			`;
+
+			document.querySelector('#add-task').appendChild(div);
 
 			if (taskCheck) {
 				document.querySelector(`[data-through="${doc.id}"]`).setAttribute('style', 'text-decoration:line-through;');
-			}else {
+			} else {
 				document.querySelector(`[data-through="${doc.id}"]`).removeAttribute('style');
 			}
 		})
