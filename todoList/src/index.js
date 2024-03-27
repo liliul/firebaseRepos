@@ -6,3 +6,4 @@ import './crud/delDocs.js'
 import './crud/putDocs.js'
 
 import './utils/createTasksLength.js'
+import './login/index.js'
