@@ -1,11 +1,11 @@
 import { db } from '../config/firestore.js';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
-let email = 'gokufirestore@email.com'
-let password = '123456'
+// let email = 'gokufirestore@email.com'
+// let password = '123456'
 
-let email = 'narutofirestore@email.com'
-let password = '101919'
+// let email = 'narutofirestore@email.com'
+// let password = '101919'
 
 // fazer login
 // const auth = getAuth();
