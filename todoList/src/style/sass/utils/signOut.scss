@@ -1,0 +1,33 @@
+@import './util.scss';
+
+.formLogin {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+
+	width: auto;
+	height: 10px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+	// background: purple;
+	.s-email {
+		font-size: 1.2rem;
+		color: $b_cor;
+	}
+	.b-signOut{
+		width: 9rem;
+	    height: 28px;
+	    background-color: #1E6F9F;
+	    border-radius: 0.8rem;
+	    border: 1px solid #0D0D0D;
+	    outline: none;
+	    color: white;
+
+	    &:hover {
+			transform: translateY(0.3rem);
+			background-color: $b_hover;
+		}
+	}	
+}
