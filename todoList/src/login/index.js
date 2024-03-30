@@ -1,5 +1,5 @@
 import { db } from '../config/firestore.js';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
 import { utils } from '../utils/utils.js';
 
@@ -34,9 +34,8 @@ authSignIn.addEventListener('submit', (event) => {
 	    const errorMessage = error.message;
 	   	console.log('e1', errorCode, 'e2', errorMessage)
 	});
-	// console.log('sign', email, password)
 })
-
+	
 
 // criar uma conta
 // const auth = getAuth();
@@ -51,12 +50,3 @@ authSignIn.addEventListener('submit', (event) => {
 //     const errorMessage = error.message;
 //     // ..
 //   });
-
-
-// // deslogado
-// const auth = getAuth();
-// signOut(auth).then(() => {
-//   // Sign-out successful.
-// }).catch((error) => {
-//   // An error happened.
-// });
