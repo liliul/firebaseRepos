@@ -1,5 +1,5 @@
 import { db } from '../config/firestore.js';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
 import { utils } from '../utils/utils.js';
 
@@ -32,7 +32,8 @@ authSignIn.addEventListener('submit', (event) => {
 	  .catch((error) => {
 	    const errorCode = error.code;
 	    const errorMessage = error.message;
-	   	console.log('e1', errorCode, 'e2', errorMessage)
+	   	console.log('e1', errorCode, 'e2', errorMessage);
+	   	alert('Erro ao fazer Login');
 	});
 })
 	
