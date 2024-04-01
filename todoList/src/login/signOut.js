@@ -22,5 +22,16 @@ onAuthStateChanged(auth, (user) => {
     })
   } else {
     console.log("Nenhum usuário está logado.");
+    
+    document.querySelector('body').innerHTML = `
+      <div style="width:100%;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:15px;">
+        <h1 style="color:white">Erro você não estar Autenticado no firebase</h1>
+        <button id="ErroAuth" style="padding:8px 15px;border:none;border-radius:8px;">Voltar para tela de login</button>
+      </div>
+    `;
+    
+    document.getElementById('ErroAuth').addEventListener('click', () => {
+      window.location.href = './index.html';
+    })
   }
 });
