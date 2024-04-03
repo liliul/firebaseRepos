@@ -37,7 +37,39 @@ authSignIn.addEventListener('submit', (event) => {
 	});
 })
 	
+const clickButtonLogin = document.getElementById('b-login');
+const clickButtonCriar = document.getElementById('b-criar');
 
+clickButtonLogin.addEventListener('click', () => {
+	authSignIn.innerHTML = `
+		<h2 class="h2-login">Fazer Login</h2>
+			
+		<label class="label-login" for="Email">Email</label>
+		<input class="input-login" type="email" id="Email" name="Email" required placeholder="Digite seu email">
+		
+		<label class="label-login" for="PassWord">Password</label>
+		<input class="input-login" type="password" id="PassWord" name="PassWord" required placeholder="Digite sua senha">
+
+		<button class="button-login" type="submit">Enviar</button>
+	`;
+})
+
+clickButtonCriar.addEventListener('click', () => {
+	authSignIn.innerHTML = `
+		<h2 class="h2-login">Criar Conta</h2>
+	
+		<label class="label-login" for="Email">Email</label>
+		<input class="input-login" type="email" id="Email" name="Email" required placeholder="Digite seu email">
+		
+		<label class="label-login" for="PassWord">Password</label>
+		<input class="input-login" type="password" id="PassWord" name="PassWord" required placeholder="Digite sua senha">
+
+		<label class="label-login" for="Confi">Confirmar senha</label>
+		<input class="input-login" type="password" id="Confi" name="Confi" required placeholder="Confirmar senha">
+
+		<button class="button-login" type="submit">Enviar</button>
+	`;	
+})
 // criar uma conta
 // const auth = getAuth();
 // createUserWithEmailAndPassword(auth, email, password)
