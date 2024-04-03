@@ -2,8 +2,10 @@
 
 .isolate-login {
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	padding-top: 20px;
+
+	@extend %flex_center;
 
 	.c-login {
 		width: 100%;
@@ -12,11 +14,31 @@
 
 		.h1-login {
 			color: $b_cor;
+			font-size: 2.9rem;
+		}
+
+		.b-forms {
+			margin-top: 20px;
+
+			.b-forms-c {
+				width: 9rem;
+			    height: 28px;
+			    background-color: #1E6F9F;
+			    border-radius: 0.8rem;
+			    border: 1px solid #0D0D0D;
+			    outline: none;
+			    color: white;
+
+			    &:hover {
+					transform: translateY(0.0rem);
+					background-color: $b_hover;
+				}
+			}
 		}
 
 		.form-login {
 			width: 500px;
-			margin-top: 30px;
+			margin-top: 10px;
 
 			@extend %flex_column_center;
 			gap: 0.8rem;

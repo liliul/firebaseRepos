@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
-.isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_input .button, .isolate .container_header .header .header_title {
+.isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_input .button, .isolate .container_header .header .header_title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,7 +86,7 @@
   background-color: #4EA8DE;
 }
 
-.isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button {
+.isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,7 +189,7 @@
   background-color: #333333;
   fill: #E25858;
 }
-.isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash {
+.isolate-login, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -219,7 +219,7 @@
 
 .isolate-login {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   padding-top: 20px;
 }
 .isolate-login .c-login {
@@ -227,10 +227,27 @@
 }
 .isolate-login .c-login .h1-login {
   color: white;
+  font-size: 2.9rem;
+}
+.isolate-login .c-login .b-forms {
+  margin-top: 20px;
+}
+.isolate-login .c-login .b-forms .b-forms-c {
+  width: 9rem;
+  height: 28px;
+  background-color: #1E6F9F;
+  border-radius: 0.8rem;
+  border: 1px solid #0D0D0D;
+  outline: none;
+  color: white;
+}
+.isolate-login .c-login .b-forms .b-forms-c:hover {
+  transform: translateY(0rem);
+  background-color: #4EA8DE;
 }
 .isolate-login .c-login .form-login {
   width: 500px;
-  margin-top: 30px;
+  margin-top: 10px;
   gap: 0.8rem;
 }
 .isolate-login .c-login .form-login .h2-login {
@@ -267,7 +284,7 @@
   background-color: #4EA8DE;
 }
 
-.isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash {
+.isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
   display: flex;
   justify-content: center;
   align-items: center;
