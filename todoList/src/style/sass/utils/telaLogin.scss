@@ -36,49 +36,52 @@
 			}
 		}
 
-		.form-login {
-			width: 500px;
-			margin-top: 10px;
+		.form-control {
 
-			@extend %flex_column_center;
-			gap: 0.8rem;
+			.form-login {
+				width: 500px;
+				margin-top: 10px;
 
-			.h2-login {
-				color: $b_cor;
-			}
+				@extend %flex_column_center;
+				gap: 0.8rem;
 
-			.label-login {
-				color: $b_cor;
-				@extend %void_text;
-			}
-			.input-login {
-				width: 60.38rem;
-			    height: 45px;
-			    border-radius: 0.8rem;
-			    border: 1px solid #0D0D0D;
-			    outline: none;
-			    background-color: #262626;
-			    padding-left: 1.6rem;
-			    color: $b_cor;
-
-			   &:focus {
-					border: 1px solid $input_active;
-					color: white;
+				.h2-login {
+					color: $b_cor;
 				}
-			}
 
-			.button-login {
-				width: 9rem;
-			    height: 28px;
-			    background-color: #1E6F9F;
-			    border-radius: 0.8rem;
-			    border: 1px solid #0D0D0D;
-			    outline: none;
-			    color: white;
+				.label-login {
+					color: $b_cor;
+					@extend %void_text;
+				}
+				.input-login {
+					width: 60.38rem;
+				    height: 45px;
+				    border-radius: 0.8rem;
+				    border: 1px solid #0D0D0D;
+				    outline: none;
+				    background-color: #262626;
+				    padding-left: 1.6rem;
+				    color: $b_cor;
 
-			    &:hover {
-					transform: translateY(0.3rem);
-					background-color: $b_hover;
+				   &:focus {
+						border: 1px solid $input_active;
+						color: white;
+					}
+				}
+
+				.button-login {
+					width: 9rem;
+				    height: 28px;
+				    background-color: #1E6F9F;
+				    border-radius: 0.8rem;
+				    border: 1px solid #0D0D0D;
+				    outline: none;
+				    color: white;
+
+				    &:hover {
+						transform: translateY(0.3rem);
+						background-color: $b_hover;
+					}
 				}
 			}
 		}
