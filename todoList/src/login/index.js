@@ -41,26 +41,23 @@ authSignIn.addEventListener('submit', (event) => {
 
 
 	
-// const clickButtonLogin = document.getElementById('b-login');
+const clickButtonLogin = document.getElementById('b-login');
 
-// clickButtonLogin.addEventListener('click', () => {
-// 	authSignIn.innerHTML = `
-// 		<div class="b-forms">
-// 			<button id="b-login" class="b-forms-c">Login</button>
-// 			<button id="b-criar" class="b-forms-c">Criar Conta</button>
-// 		</div>
-
-// 		<h2 class="h2-login">Fazer Login</h2>
-			
-// 		<label class="label-login" for="Email">Email</label>
-// 		<input class="input-login" type="email" id="Email" name="Email" required placeholder="Digite seu email">
+clickButtonLogin.addEventListener('click', () => {
+	document.querySelector('.form-control').innerHTML = `
+		<form class="form-login" data-authentication="auth">
+			<h2 class="h2-login">Fazer Login</h2>
 		
-// 		<label class="label-login" for="PassWord">Password</label>
-// 		<input class="input-login" type="password" id="PassWord" name="PassWord" required placeholder="Digite sua senha">
+			<label class="label-login" for="Email">Email</label>
+			<input class="input-login" type="email" id="Email" name="Email" required placeholder="Digite seu email">
+			
+			<label class="label-login" for="PassWord">Password</label>
+			<input class="input-login" type="password" id="PassWord" name="PassWord" required placeholder="Digite sua senha">
 
-// 		<button class="button-login" type="submit">Enviar</button>
-// 	`;
-// })
+			<button class="button-login" type="submit">Enviar</button>
+		</form>
+	`;
+})
 
 const clickButtonCriar = document.getElementById('b-criar');
 
@@ -102,6 +99,10 @@ clickButtonCriar.addEventListener('click', () => {
 			    console.log(user)
 
 	   			document.querySelector('.h2-login').innerHTML = `<i>${utils.iconSelect}</i>`;
+
+	   			setTimeout(() => {
+	   				window.location.reload()
+	   			}, 2000)
 
 			  })
 			  .catch((error) => {
