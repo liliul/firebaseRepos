@@ -33,7 +33,8 @@ authSignIn.addEventListener('submit', (event) => {
 	    const errorCode = error.code;
 	    const errorMessage = error.message;
 	   	console.log('e1', errorCode, 'e2', errorMessage);
-	   	alert('Erro ao fazer Login');
+	   	document.querySelector('.h2-login').innerHTML = `<span style="color: tomato;">Erro ao fazer Login Email ou Senha invalido</span>`;
+	   	// alert('Erro ao fazer Login');
 	});
 
 })
