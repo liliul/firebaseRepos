@@ -27,25 +27,22 @@ clickButtonCriar.addEventListener('click', () => {
 	const criarUser = document.querySelector('[data-criar-conta="createuser"]');
 
 	criarUser.addEventListener('submit', (e) => {
-		e.preventDefault()
+		e.preventDefault();
 
 		const email    = document.getElementById('Email-criar').value.trim();
 		const password = document.getElementById('PassWord-criar').value.trim();
 		const Confi    = document.getElementById('Confi').value.trim();
-		console.log(email, password, Confi)
-		if (password === Confi) {
-			// console.log('Confi')
-			// criar uma conta
+		
+		if (password === Confi) {	
 			const auth = getAuth();
 			createUserWithEmailAndPassword(auth, email, password)
 			  .then((userCredential) => {
 			    const user = userCredential.user;
-			    console.log(user)
 
 	   			document.querySelector('.h2-login').innerHTML = `<i>${utils.iconSelect}</i>`;
 
 	   			setTimeout(() => {
-	   				window.location.reload()
+	   				window.location.reload();
 	   			}, 2000)
 
 			  })
@@ -54,8 +51,9 @@ clickButtonCriar.addEventListener('click', () => {
 			    const errorMessage = error.message;
 			  });
 		}
+
 		if (password != Confi) {
-			console.log('Diferente')
+			console.log('Diferente');
 		}
 	})
 })

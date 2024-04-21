@@ -21,8 +21,9 @@ authSignIn.addEventListener('submit', (event) => {
 	const auth = getAuth();
 	signInWithEmailAndPassword(auth, email, password)
 	  .then((userCredential) => {
+
 	    const user = userCredential.user;
-	   	console.log('auth ', user.uid)
+	   	
 	   	document.querySelector('.h2-login').innerHTML = `<i>${utils.iconSelect}</i>`;
 
 	    setTimeout(() => {
@@ -32,9 +33,8 @@ authSignIn.addEventListener('submit', (event) => {
 	  .catch((error) => {
 	    const errorCode = error.code;
 	    const errorMessage = error.message;
-	   	console.log('e1', errorCode, 'e2', errorMessage);
+	   
 	   	document.querySelector('.h2-login').innerHTML = `<span style="color: tomato;">Erro ao fazer Login Email ou Senha invalido</span>`;
-	   	// alert('Erro ao fazer Login');
 	});
 
 })
