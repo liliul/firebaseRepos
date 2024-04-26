@@ -6,15 +6,17 @@
   import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js'
   // https://firebase.google.com/docs/web/alt-setup?authuser=0&hl=pt#from-the-cdn
 
+  // informações do firebase
+  import { api } from '../../env.js';
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyAGKFgO7myWz9FsQhvsG6CsawgzYJtOLjI",
-    authDomain: "todolist-1ca60.firebaseapp.com",
-    projectId: "todolist-1ca60",
-    storageBucket: "todolist-1ca60.appspot.com",
-    messagingSenderId: "498722297052",
-    appId: "1:498722297052:web:808bff14dd8b2dfb85d019"
+    apiKey: api.API_KEY,
+    authDomain: api.AUTHDOMAIN,
+    projectId: api.PROJECTID,
+    storageBucket: api.STORAGEBUCKET,
+    messagingSenderId: api.MESSAGINGSENDERID,
+    appId: api.APPID
   };
 
   // Initialize Firebase
