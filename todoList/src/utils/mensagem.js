@@ -1,7 +1,7 @@
-export function mensagem() {
-	const divMensagem = document.createElement('div')
-    divMensagem.setAttribute('id', 'mensagem')
-    divMensagem.innerHTML = `${msSucefull('Tarefa Criada com Sucesso!')}`
+export function mensagem(mensagem) {
+	const divMensagem = document.createElement('div');
+    divMensagem.setAttribute('id', 'mensagem');
+    divMensagem.innerHTML = `${msSucefull(mensagem)}`;
     
     document.querySelector('body').appendChild(divMensagem);
 

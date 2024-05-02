@@ -18,7 +18,7 @@ buttonTask.addEventListener('click', async () => {
                 taskCheck: ""
             })
 
-            mensagem()
+            mensagem('Tarefa Criada com Sucesso!');
 
         } catch (e) {
             console.error('addDoc', e)
