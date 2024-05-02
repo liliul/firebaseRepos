@@ -1,0 +1,20 @@
+@import './util.scss';
+
+.m-container {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	z-index: 999;
+
+	width: 190px;
+	height: 84px;
+	border-radius: $radius_i_b;
+
+	background-color: $button_bg;  
+
+	@extend %flex_center;
+
+	.m-texto {
+		color: white;
+	}
+}

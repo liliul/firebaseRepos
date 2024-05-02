@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
-.isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_input .button, .isolate .container_header .header .header_title {
+.m-container, .isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_input .button, .isolate .container_header .header .header_title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,7 +86,7 @@
   background-color: #4EA8DE;
 }
 
-.isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button {
+.m-container, .isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,7 +189,7 @@
   background-color: #333333;
   fill: #E25858;
 }
-.isolate-login, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash {
+.m-container, .isolate-login, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,7 +284,7 @@
   background-color: #4EA8DE;
 }
 
-.isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
+.m-container, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -338,6 +338,48 @@
 .formLogin .b-signOut:hover {
   transform: translateY(0.3rem);
   background-color: #4EA8DE;
+}
+
+.m-container, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.isolate .main .main_content .content_articles .articles-void, .isolate-login .c-login, .isolate-login .c-login .form-control .form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter {
+  background-color: #333333;
+  width: 2.2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: #D9D9D9;
+}
+
+.isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate-login .c-login .form-control .form-login .label-login {
+  font-size: 1.6rem;
+  font-family: "Inter", sans-serif;
+  line-height: 140%;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.m-container {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 999;
+  width: 190px;
+  height: 84px;
+  border-radius: 0.8rem;
+  background-color: #1E6F9F;
+}
+.m-container .m-texto {
+  color: white;
 }
 
 * {
