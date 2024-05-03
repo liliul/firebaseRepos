@@ -2,8 +2,8 @@
 
 ```bash
 
-# criar arquivo env.js na raiz do projeto
-touch env.js
+# criar arquivo env.js na pasta config do projeto
+touch src/config/env.js
 
 # copia esse codigo no env.js e coloca as informações do firebase
 const API_KEY = 

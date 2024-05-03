@@ -7,7 +7,7 @@
   // https://firebase.google.com/docs/web/alt-setup?authuser=0&hl=pt#from-the-cdn
 
   // informações do firebase
-  import { api } from '../../env.js';
+  import { api } from './env.js';
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
