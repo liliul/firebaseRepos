@@ -1,3 +1,8 @@
+/**
+ * @param {string} mensagem
+ * @descrition É a mensagem da função msSucefull
+ * */
+
 export function mensagem(mensagem) {
 	const divMensagem = document.createElement('div');
     divMensagem.setAttribute('id', 'mensagem');
@@ -8,9 +13,12 @@ export function mensagem(mensagem) {
     setTimeout(() => {
         document.getElementById('mensagem').remove();
     },2500)
-    // console.log('mensagem: ', msSucefull("Tarefa Criada com Sucesso."))
 }
 
+/**
+ * @param {string} mensagem em texto
+ * @returns {string} de texto
+ * */
 export function msSucefull(mensagem) {
 	return (`
 		<section class="m-container">
