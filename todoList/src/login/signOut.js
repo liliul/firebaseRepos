@@ -1,4 +1,3 @@
-import { db } from '../config/firestore.js';
 import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
 const auth = getAuth();
@@ -15,7 +14,6 @@ onAuthStateChanged(auth, (user) => {
     	const auth = getAuth();
   		signOut(auth).then(() => {
       		document.querySelector('.formLogin').style.display = 'none';
-      		window.location.href = './index.html';
   		}).catch((error) => {
   			console.log('Erro ao deslogar', error);
   		});
