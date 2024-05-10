@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
 import { utils } from '../utils/utils.js';
 
@@ -38,11 +38,18 @@ clickButtonCriar.addEventListener('click', () => {
 			  .then((userCredential) => {
 			    const user = userCredential.user;
 
-	   			document.querySelector('.h2-login').innerHTML = `<i>${utils.iconSelect}</i>`;
+	   			const verificarEmail = auth.currentUser;
 
-	   			setTimeout(() => {
-	   				window.location.reload();
-	   			}, 2000)
+	   			sendEmailVerification(verificarEmail)
+	   				.then(() => {
+	   					alert(`Verificar o Email: ${email}`);
+	   					
+	   					document.querySelector('.h2-login').innerHTML = `<i>${utils.iconSelect}</i>`;
+
+			   			setTimeout(() => {
+			   				window.location.reload();
+			   			}, 2000)
+	   				})
 
 			  })
 			  .catch((error) => {

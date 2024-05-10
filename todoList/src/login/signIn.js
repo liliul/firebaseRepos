@@ -24,6 +24,11 @@ authSignIn.addEventListener('submit', (event) => {
 
 	    const user = userCredential.user;
 	   	
+	    if (!auth.currentUser.emailVerified) {
+	    	alert('Verificar o seu email');
+	    	return;
+	    }
+
 	   	document.querySelector('.h2-login').innerHTML = `<i>${utils.iconSelect}</i>`;
 
 	    setTimeout(() => {
