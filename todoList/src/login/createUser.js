@@ -46,12 +46,32 @@ clickButtonCriar.addEventListener('click', () => {
 
 			  })
 			  .catch((error) => {
-			    const errorCode = error.code;
-			    const errorMessage = error.message;
+			    // const errorCode = error.code;
+			    // const errorMessage = error.message;
+			  	switch(error.code) {
+			  		case 'auth/email-already-in-use':
+			  			document.querySelector('.h2-login').innerHTML = `<span style="color: yellow;">Erro Email ja existe</span>`;
+			  			console.log('email-already-in-use');
+			  			break;
+			  		case 'auth/operation-not-allowed':
+			  			document.querySelector('.h2-login').innerHTML = `<span style="color: purple;">Erro ao cadastra usuario</span>`;
+			  			console.log('operation-not-allowed');
+			  			break;
+			  		case 'auth/invalid-email':
+			  			document.querySelector('.h2-login').innerHTML = `<span style="color: tomato;">Erro email invalido</span>`;
+			  			console.log('invalid-email');
+			  			break;
+			  		case 'auth/weak-password': 
+			  			document.querySelector('.h2-login').innerHTML = `<span style="color: tomato;">Erro senha fraca</span>`;
+			  			console.log('weak-password');
+			  			break;			
+
+			  	}
 			  });
 		}
 
 		if (password != Confi) {
+			document.querySelector('.h2-login').innerHTML = `<span style="color: purple;">Erro senha Diferentes</span>`;
 			console.log('Diferente');
 		}
 	})
