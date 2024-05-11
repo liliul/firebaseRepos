@@ -2,7 +2,8 @@ import { db } from '../config/firestore.js';
 import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
 import { utils } from '../utils/utils.js';
-
+import { emailVerificadoMensagem } from '../utils/mensagem.js';
+ 
 // let email = 'gokufirestore@email.com'
 // let password = '123456'
 
@@ -25,7 +26,8 @@ authSignIn.addEventListener('submit', (event) => {
 	    const user = userCredential.user;
 	   	
 	    if (!auth.currentUser.emailVerified) {
-	    	alert('Verificar o seu email');
+	    	// alert('Verificar o seu email');
+	    	emailVerificadoMensagem('.isolate-login', `Para fazer Login com esse email: ${email} tem que verifica na sua caixa de email.`);
 	    	return;
 	    }
 

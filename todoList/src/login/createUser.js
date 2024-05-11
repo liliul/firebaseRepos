@@ -1,6 +1,7 @@
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
 import { utils } from '../utils/utils.js';
+import { emailVerificadoMensagem } from '../utils/mensagem.js';
 
 const clickButtonCriar = document.getElementById('b-criar');
 
@@ -42,7 +43,8 @@ clickButtonCriar.addEventListener('click', () => {
 
 	   			sendEmailVerification(verificarEmail)
 	   				.then(() => {
-	   					alert(`Verificar o Email: ${email}`);
+	   					// alert(`Verificar o Email: ${email}`);
+	   					emailVerificadoMensagem('.isolate-login', `Verifica seu email: ${email} para fazer login.`);
 	   					
 	   					document.querySelector('.h2-login').innerHTML = `<i>${utils.iconSelect}</i>`;
 
