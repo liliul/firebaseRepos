@@ -43,7 +43,6 @@ clickButtonCriar.addEventListener('click', () => {
 
 	   			sendEmailVerification(verificarEmail)
 	   				.then(() => {
-	   					// alert(`Verificar o Email: ${email}`);
 	   					emailVerificadoMensagem('.isolate-login', `Verifica seu email: ${email} para fazer login.`);
 	   					
 	   					document.querySelector('.h2-login').innerHTML = `<i>${utils.iconSelect}</i>`;
@@ -55,8 +54,6 @@ clickButtonCriar.addEventListener('click', () => {
 
 			  })
 			  .catch((error) => {
-			    // const errorCode = error.code;
-			    // const errorMessage = error.message;
 			  	switch(error.code) {
 			  		case 'auth/email-already-in-use':
 			  			document.querySelector('.h2-login').innerHTML = `<span style="color: yellow;">Erro Email ja existe</span>`;
