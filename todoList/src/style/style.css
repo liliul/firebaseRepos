@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
-.m-container, .isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_input .button, .isolate .container_header .header .header_title {
+.veri-email-container, .m-container, .isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_input .button, .isolate .container_header .header .header_title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@
   color: #D9D9D9;
 }
 
-.isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate .main .main_content .content_articles .articles-void .void-p {
+.veri-email-container .veri-email-texto, .isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate .main .main_content .content_articles .articles-void .void-p {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   line-height: 140%;
@@ -86,7 +86,7 @@
   background-color: #4EA8DE;
 }
 
-.m-container, .isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button {
+.veri-email-container, .m-container, .isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,7 +106,7 @@
   color: #D9D9D9;
 }
 
-.isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate .main .main_content .content_articles .articles-void .void-p {
+.veri-email-container .veri-email-texto, .isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate .main .main_content .content_articles .articles-void .void-p {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   line-height: 140%;
@@ -189,7 +189,7 @@
   background-color: #333333;
   fill: #E25858;
 }
-.m-container, .isolate-login, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash {
+.veri-email-container, .m-container, .isolate-login, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -209,7 +209,7 @@
   color: #D9D9D9;
 }
 
-.isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small {
+.veri-email-container .veri-email-texto, .isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   line-height: 140%;
@@ -284,7 +284,7 @@
   background-color: #4EA8DE;
 }
 
-.m-container, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
+.veri-email-container, .m-container, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -304,7 +304,7 @@
   color: #D9D9D9;
 }
 
-.isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate-login .c-login .form-control .form-login .label-login {
+.veri-email-container .veri-email-texto, .isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate-login .c-login .form-control .form-login .label-login {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   line-height: 140%;
@@ -340,7 +340,7 @@
   background-color: #4EA8DE;
 }
 
-.m-container, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
+.veri-email-container, .m-container, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -360,7 +360,7 @@
   color: #D9D9D9;
 }
 
-.isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate-login .c-login .form-control .form-login .label-login {
+.veri-email-container .veri-email-texto, .isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate-login .c-login .form-control .form-login .label-login {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   line-height: 140%;
@@ -379,6 +379,21 @@
   background-color: #1E6F9F;
 }
 .m-container .m-texto {
+  color: white;
+}
+
+.veri-email-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  width: content;
+  height: 94px;
+  border-radius: 0.8rem;
+  padding: 8px;
+  background-color: #1E6F9F;
+}
+.veri-email-container .veri-email-texto {
   color: white;
 }
 

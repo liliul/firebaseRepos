@@ -18,3 +18,24 @@
 		color: white;
 	}
 }
+
+.veri-email-container {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 999;
+
+	width: content;
+	height: 94px;
+	border-radius: $radius_i_b;
+	padding: 8px;
+
+	background-color: $button_bg;  
+
+	@extend %flex_center;
+
+	.veri-email-texto {
+		color: white;
+		@extend %void_text;
+	}
+}

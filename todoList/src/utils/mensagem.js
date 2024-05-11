@@ -26,3 +26,29 @@ export function msSucefull(mensagem) {
 		</section>
 	`)
 }
+
+/**
+ * @description mensagem para verificar email no firebase authentication
+ * 
+ * @param {elementHtml} elemento id class ou tag no querySelector
+ * @param {string} mensagem da function emailVerificadoHtml
+ * */
+export function emailVerificadoMensagem(element, mensagem) {
+	const sectionMensagem = document.createElement('section');
+	sectionMensagem.setAttribute('id', 'emailVerificadoMensagem');
+	sectionMensagem.innerHTML = `${emailVerificadoHtml(mensagem)}`;
+
+	document.querySelector(element).insertAdjacentElement('beforebegin', sectionMensagem);
+
+	// setTimeout(() => {
+    //     document.getElementById('emailVerificadoMensagem').remove();
+    // },2000)
+}
+
+export function emailVerificadoHtml(mensagem) {
+	return (`
+		<section class="veri-email-container">
+			<h3 class="veri-email-texto">${mensagem}</h3>
+		</section>
+	`)
+}
