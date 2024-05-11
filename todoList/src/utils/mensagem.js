@@ -40,9 +40,9 @@ export function emailVerificadoMensagem(element, mensagem) {
 
 	document.querySelector(element).insertAdjacentElement('beforebegin', sectionMensagem);
 
-	// setTimeout(() => {
-    //     document.getElementById('emailVerificadoMensagem').remove();
-    // },2000)
+	setTimeout(() => {
+        document.getElementById('emailVerificadoMensagem').remove();
+    },2000)
 }
 
 export function emailVerificadoHtml(mensagem) {
