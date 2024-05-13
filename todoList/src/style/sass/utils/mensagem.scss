@@ -19,23 +19,59 @@
 	}
 }
 
-.veri-email-container {
+
+#emailVerificadoMensagem {
+	width: 100%;
+	height: 180px;
+
+	display: flex;
+	justify-content: center;
+
 	position: absolute;
 	top: 20px;
-	left: 20px;
 	z-index: 999;
+	
+	.veri-email-container {
 
-	width: content;
-	height: 94px;
-	border-radius: $radius_i_b;
-	padding: 8px;
+		animation: mensagemVerificaEmail 250ms linear;
+		transition: all 100ms;
+		
+		height: 94px;
+		border-radius: $radius_i_b;
+		padding: 8px;
 
-	background-color: $button_bg;  
+		background-color: $button_bg;  
 
-	@extend %flex_center;
+		@extend %flex_center;
 
-	.veri-email-texto {
+		.veri-email-texto {
+			color: white;
+			@extend %void_text;
+			animation: textInvisivel 350ms;
+		}
+	}	
+}
+
+@keyframes mensagemVerificaEmail {
+	from {
+		width: 0px;
+	}
+	to {
+		width: fit-content;
+	}
+}
+
+@keyframes textInvisivel {
+	0%{
+		color: transparent;
+	}
+	50% {
+		color: transparent;
+	}
+	75% {
+		color: transparent;
+	}
+	100% {
 		color: white;
-		@extend %void_text;
 	}
 }

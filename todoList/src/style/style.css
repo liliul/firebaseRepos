@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
-.veri-email-container, .m-container, .isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_input .button, .isolate .container_header .header .header_title {
+#emailVerificadoMensagem .veri-email-container, .m-container, .isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_input .button, .isolate .container_header .header .header_title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@
   color: #D9D9D9;
 }
 
-.veri-email-container .veri-email-texto, .isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate .main .main_content .content_articles .articles-void .void-p {
+#emailVerificadoMensagem .veri-email-container .veri-email-texto, .isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate .main .main_content .content_articles .articles-void .void-p {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   line-height: 140%;
@@ -86,7 +86,7 @@
   background-color: #4EA8DE;
 }
 
-.veri-email-container, .m-container, .isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button {
+#emailVerificadoMensagem .veri-email-container, .m-container, .isolate-login, .isolate .main .main_content .content_articles .tasks .trash, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_task-create, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,7 +106,7 @@
   color: #D9D9D9;
 }
 
-.veri-email-container .veri-email-texto, .isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate .main .main_content .content_articles .articles-void .void-p {
+#emailVerificadoMensagem .veri-email-container .veri-email-texto, .isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate .main .main_content .content_articles .articles-void .void-p {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   line-height: 140%;
@@ -189,7 +189,7 @@
   background-color: #333333;
   fill: #E25858;
 }
-.veri-email-container, .m-container, .isolate-login, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash {
+#emailVerificadoMensagem .veri-email-container, .m-container, .isolate-login, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -209,7 +209,7 @@
   color: #D9D9D9;
 }
 
-.veri-email-container .veri-email-texto, .isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small {
+#emailVerificadoMensagem .veri-email-container .veri-email-texto, .isolate-login .c-login .form-control .form-login .label-login, .isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   line-height: 140%;
@@ -284,7 +284,7 @@
   background-color: #4EA8DE;
 }
 
-.veri-email-container, .m-container, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
+#emailVerificadoMensagem .veri-email-container, .m-container, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -304,7 +304,7 @@
   color: #D9D9D9;
 }
 
-.veri-email-container .veri-email-texto, .isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate-login .c-login .form-control .form-login .label-login {
+#emailVerificadoMensagem .veri-email-container .veri-email-texto, .isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate-login .c-login .form-control .form-login .label-login {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   line-height: 140%;
@@ -340,7 +340,7 @@
   background-color: #4EA8DE;
 }
 
-.veri-email-container, .m-container, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
+#emailVerificadoMensagem .veri-email-container, .m-container, .isolate .container_header .header .header_title, .isolate .container_header .header .header_input .button, .isolate .main .main_content .content_header .content_task-create, .isolate .main .main_content .content_header .content_task-create .task-counter, .isolate .main .main_content .content_header .content_completed .completed-counter, .isolate .main .main_content .content_articles .tasks .trash, .isolate-login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -360,7 +360,7 @@
   color: #D9D9D9;
 }
 
-.veri-email-container .veri-email-texto, .isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate-login .c-login .form-control .form-login .label-login {
+#emailVerificadoMensagem .veri-email-container .veri-email-texto, .isolate .main .main_content .content_articles .articles-void .void-p, .isolate .main .main_content .content_articles .articles-void .void-small, .isolate-login .c-login .form-control .form-login .label-login {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   line-height: 140%;
@@ -382,21 +382,50 @@
   color: white;
 }
 
-.veri-email-container {
+#emailVerificadoMensagem {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
   position: absolute;
   top: 20px;
-  left: 20px;
   z-index: 999;
-  width: content;
+}
+#emailVerificadoMensagem .veri-email-container {
+  animation: mensagemVerificaEmail 250ms linear;
+  transition: all 100ms;
   height: 94px;
   border-radius: 0.8rem;
   padding: 8px;
   background-color: #1E6F9F;
 }
-.veri-email-container .veri-email-texto {
+#emailVerificadoMensagem .veri-email-container .veri-email-texto {
   color: white;
+  animation: textInvisivel 350ms;
 }
 
+@keyframes mensagemVerificaEmail {
+  from {
+    width: 0px;
+  }
+  to {
+    width: fit-content;
+  }
+}
+@keyframes textInvisivel {
+  0% {
+    color: transparent;
+  }
+  50% {
+    color: transparent;
+  }
+  75% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
 * {
   margin: 0;
   padding: 0;
