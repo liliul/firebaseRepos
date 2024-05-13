@@ -49,7 +49,7 @@ clickButtonCriar.addEventListener('click', () => {
 
 			   			setTimeout(() => {
 			   				window.location.reload();
-			   			}, 2000)
+			   			}, 3500)
 	   				})
 
 			  })
@@ -71,7 +71,6 @@ clickButtonCriar.addEventListener('click', () => {
 			  			document.querySelector('.h2-login').innerHTML = `<span style="color: tomato;">Erro senha fraca</span>`;
 			  			console.log('weak-password');
 			  			break;			
-
 			  	}
 			  });
 		}
