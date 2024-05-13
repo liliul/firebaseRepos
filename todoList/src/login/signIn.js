@@ -34,7 +34,7 @@ authSignIn.addEventListener('submit', (event) => {
 
 	    setTimeout(() => {
 	      window.location = './todoList.html';
-	    }, 3000)
+	    }, 2000)
 	})
 	  .catch((error) => {
 	    const errorCode = error.code;
