@@ -26,7 +26,7 @@ authSignIn.addEventListener('submit', (event) => {
 	    const user = userCredential.user;
 	   	
 	    if (!auth.currentUser.emailVerified) {
-	    	emailVerificadoMensagem('.isolate-login', `Para fazer Login com esse email: ${email} tem que verifica na sua caixa de email.`);
+	    	emailVerificadoMensagem('.isolate-login', `Verifica seu email: ${email} na sua caixa de email.`);
 	    	return;
 	    }
 

@@ -42,7 +42,7 @@ export function emailVerificadoMensagem(element, mensagem) {
 
 	setTimeout(() => {
         document.getElementById('emailVerificadoMensagem').remove();
-    }, 2500)
+    }, 4000)
 }
 
 export function emailVerificadoHtml(mensagem) {
