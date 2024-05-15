@@ -1,4 +1,5 @@
 import { getAuth, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
+import { emailVerificadoMensagem } from '../utils/mensagem.js';
 
 const redefinirSenha = document.getElementById('redefinirSenha');
 
@@ -23,11 +24,11 @@ redefinirSenha.addEventListener('click', (e) => {
 		
 		const emailRedefinirSenha = document.getElementById('Email-criar').value.trim();
 		console.log('email', emailRedefinirSenha)		
-		const resetPassword = await sendPasswordResetEmail(auth, emailRedefinirSenha)
-		if (resetPassword === 'auth/missing-email') {
-			alert('resetPassword')
-		}
-		alert(`redefinir senha do email: ${emailRedefinirSenha}`)
+		
+		await sendPasswordResetEmail(auth, emailRedefinirSenha);
+
+		emailVerificadoMensagem('.isolate-login', `Email enviado para ${emailRedefinirSenha}`);
+		
 
 		
 	})
