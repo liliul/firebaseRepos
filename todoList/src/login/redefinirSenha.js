@@ -5,6 +5,8 @@ const redefinirSenha = document.getElementById('redefinirSenha');
 redefinirSenha.addEventListener('click', (e) => {
 	const auth = getAuth();
 
+	document.querySelector('.div-redefinir').style.display = 'none';
+
 	document.querySelector('.form-control').innerHTML = `
 		<form class="form-login" data-criar-conta="createuser">
 			<h2 class="h2-login">Redefinir Senha</h2>

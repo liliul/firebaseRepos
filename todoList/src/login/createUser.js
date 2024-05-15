@@ -6,6 +6,7 @@ import { emailVerificadoMensagem } from '../utils/mensagem.js';
 const clickButtonCriar = document.getElementById('b-criar');
 
 clickButtonCriar.addEventListener('click', () => {
+	document.querySelector('.div-redefinir').remove();
 
 	document.querySelector('.form-control').innerHTML = `
 		<form class="form-login" data-criar-conta="createuser">
