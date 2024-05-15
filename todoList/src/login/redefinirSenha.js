@@ -11,11 +11,26 @@ redefinirSenha.addEventListener('click', (e) => {
 
 			<label class="label-login" for="Email-criar">Email</label>
 			<input class="input-login" type="email" id="Email-criar" name="Email-criar" required placeholder="Digite seu email">
+
+			<button id="enviarEmail">enviar senha</button>
 		</form>
 	`;
 
-	// const emailRedefinirSenha = 'liliuestudo@gmail.com';
+	document.querySelector('.form-control').addEventListener('submit', async (e) => {
+		e.preventDefault();
+		
+		const emailRedefinirSenha = document.getElementById('Email-criar').value.trim();
+		console.log('email', emailRedefinirSenha)		
+		const resetPassword = await sendPasswordResetEmail(auth, emailRedefinirSenha)
+		if (resetPassword === 'auth/missing-email') {
+			alert('resetPassword')
+		}
+		alert(`redefinir senha do email: ${emailRedefinirSenha}`)
 
-	// await sendPasswordResetEmail(auth, emailRedefinirSenha)
-	// alert(`redefinir senha do email: ${emailRedefinirSenha}`)
+		
+	})
+	
 })
+
+
+// auth/missing-email
