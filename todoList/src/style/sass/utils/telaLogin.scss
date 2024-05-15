@@ -37,9 +37,9 @@
 		}
 
 		.form-control {
-
+			width: 60.38rem;
+			
 			.form-login {
-				width: 500px;
 				margin-top: 10px;
 
 				@extend %flex_column_center;
@@ -82,6 +82,27 @@
 						transform: translateY(0.3rem);
 						background-color: $b_hover;
 					}
+				}
+			}
+		}
+
+		.div-redefinir {
+			width: 60.38rem;
+			margin-top: 15px;
+
+			.button-redefinir {
+				width: fit-content;
+			    height: 28px;
+			    padding: 0px 8px 0px 8px;
+			    background-color: #1E6F9F;
+			    border-radius: 0.8rem;
+			    border: 1px solid #0D0D0D;
+			    outline: none;
+			    color: white;
+
+			    &:hover {
+					transform: translateY(0.3rem);
+					background-color: $b_hover;
 				}
 			}
 		}

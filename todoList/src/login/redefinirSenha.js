@@ -12,7 +12,7 @@ redefinirSenha.addEventListener('click', (e) => {
 			<label class="label-login" for="Email-criar">Email</label>
 			<input class="input-login" type="email" id="Email-criar" name="Email-criar" required placeholder="Digite seu email">
 
-			<button id="enviarEmail">enviar senha</button>
+			<button id="enviarEmail" class="button-login">enviar senha</button>
 		</form>
 	`;
 

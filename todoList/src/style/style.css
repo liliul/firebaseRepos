@@ -245,8 +245,10 @@
   transform: translateY(0rem);
   background-color: #4EA8DE;
 }
+.isolate-login .c-login .form-control {
+  width: 60.38rem;
+}
 .isolate-login .c-login .form-control .form-login {
-  width: 500px;
   margin-top: 10px;
   gap: 0.8rem;
 }
@@ -280,6 +282,24 @@
   color: white;
 }
 .isolate-login .c-login .form-control .form-login .button-login:hover {
+  transform: translateY(0.3rem);
+  background-color: #4EA8DE;
+}
+.isolate-login .c-login .div-redefinir {
+  width: 60.38rem;
+  margin-top: 15px;
+}
+.isolate-login .c-login .div-redefinir .button-redefinir {
+  width: fit-content;
+  height: 28px;
+  padding: 0px 8px 0px 8px;
+  background-color: #1E6F9F;
+  border-radius: 0.8rem;
+  border: 1px solid #0D0D0D;
+  outline: none;
+  color: white;
+}
+.isolate-login .c-login .div-redefinir .button-redefinir:hover {
   transform: translateY(0.3rem);
   background-color: #4EA8DE;
 }
