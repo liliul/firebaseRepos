@@ -413,7 +413,6 @@
 }
 #emailVerificadoMensagem .veri-email-container {
   animation: mensagemVerificaEmail 250ms linear;
-  transition: all 100ms;
   height: 94px;
   border-radius: 0.8rem;
   padding: 8px;
@@ -440,7 +439,7 @@
     color: transparent;
   }
   75% {
-    color: transparent;
+    opacity: 0.5;
   }
   100% {
     color: white;
