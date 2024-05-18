@@ -23,7 +23,6 @@ redefinirSenha.addEventListener('click', (e) => {
 		e.preventDefault();
 		
 		const emailRedefinirSenha = document.getElementById('Email-criar').value.trim();
-		console.log('email', emailRedefinirSenha)		
 		
 		await sendPasswordResetEmail(auth, emailRedefinirSenha);
 

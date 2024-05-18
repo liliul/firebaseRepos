@@ -19,7 +19,6 @@ onAuthStateChanged(auth, (user) => {
   		});
     })
   } else {
-    console.log("Nenhum usuário está logado.");
     
     document.querySelector('body').innerHTML = `
       <div style="width:100%;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:15px;">
