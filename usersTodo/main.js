@@ -1,13 +1,13 @@
 // Importando módulos do Firebase
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { getFirestore, collection, doc, addDoc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
+import { getFirestore, collection, doc, addDoc, getDocs, updateDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js';
 
 // Configuração do Firebase
 const firebaseConfig = {
-  apiKey: 'SUA_API_KEY',
-  authDomain: 'SEU_AUTH_DOMAIN',
-  projectId: 'SEU_PROJECT_ID'
+  apiKey: 'AIzaSyAGKFgO7myWz9FsQhvsG6CsawgzYJtOLjI',
+  authDomain: 'todolist-1ca60.firebaseapp.com',
+  projectId: 'todolist-1ca60'
 };
 
 // Inicialização do Firebase App
@@ -37,7 +37,7 @@ signInWithEmailAndPassword(auth, email, password)
 // Adicionar uma Todolist para o usuário atual
 function addTodolist(title) {
     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
-    return addDoc(collection(db, `users/${userId}/todolists`), {
+    return addDoc(collection(db, `teste-todo/${userId}/todolists`), {
         title: title,
         tasks: [] // Inicialmente vazio
     });
@@ -56,7 +56,7 @@ addTodolist('Minha Lista')
 // Obtém Todolists do usuário atual
 function getTodolists() {
     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
-    return getDocs(collection(db, `users/${userId}/todolists`));
+    return getDocs(collection(db, `teste-todo/${userId}/todolists`));
 }
 
 // Exemplo de uso
@@ -74,7 +74,7 @@ getTodolists()
 // Atualizar o estado de conclusão de uma tarefa
 function updateTaskCompletion(todolistId, taskId, completed) {
     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
-    const taskRef = doc(db, `users/${userId}/todolists/${todolistId}/tasks/${taskId}`);
+    const taskRef = doc(db, `teste-todo/${userId}/todolists/${todolistId}/tasks/${taskId}`);
     return updateDoc(taskRef, {
         completed: completed
     });
@@ -93,7 +93,7 @@ updateTaskCompletion('todolistId', 'taskId', true)
 // Excluir uma tarefa de um Todolist
 function deleteTask(todolistId, taskId) {
     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
-    const taskRef = doc(db, `users/${userId}/todolists/${todolistId}/tasks/${taskId}`);
+    const taskRef = doc(db, `teste-todo/${userId}/todolists/${todolistId}/tasks/${taskId}`);
     return deleteDoc(taskRef);
 }
 
