@@ -1,0 +1,12 @@
+{
+  "name": "userstodo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "live-server --port=8081 --no-browser"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
