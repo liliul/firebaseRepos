@@ -1,6 +1,6 @@
 // Importando módulos do Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 import { getFirestore, collection, doc, addDoc, getDocs, updateDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js';
 
 // Configuração do Firebase
@@ -21,11 +21,22 @@ const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
 console.log(db)
 
-// const email = 'gokufirestore@email.com';
-// const password = '123456';
+document.querySelector('.container').innerHTML = `
+  <div class='c-input'>
+    <form id='formDoInput'>
+      <label for='todoInput'>UsersTodoList</label>
+      <input type='text' placeholder='todo list' id='todoInput' name='todoInput'/>
+    </form>
+  </div>
 
-const email = 'narutofirestore@email.com';
+  <section id='content'></section>
+`;
+
+const email = 'gokufirestore@email.com';
 const password = '123456';
+
+// const email = 'narutofirestore@email.com';
+// const password = '123456';
 
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -33,23 +44,24 @@ signInWithEmailAndPassword(auth, email, password)
     const user = userCredential.user;
     console.log('Usuário logado:', user.uid);
 
-   // Adicionar uma Todolist para o usuário atual
-   //  function addTodolist(title, check) {
-   //      const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
-   //      return addDoc(collection(db, `teste-todo/${userId}/todolists`), {
-   //          input: title,
-   //          taskCheck: check // Inicialmente vazio
-   //      });
-   //  }
-   //
-   // // Exemplo de uso
-   //  addTodolist('todo-list do email do naruto', "")
-   //    .then(docRef => {
-   //      console.log('Todolist adicionada com ID:', docRef.id);
-   //    })
-   //    .catch(error => {
-   //      console.error('Erro ao adicionar Todolist:', error);
-   //    });
+     // Adicionar uma Todolist para o usuário atual
+      // function addTodolist(title, check) {
+      //     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+      //     return addDoc(collection(db, `teste-todo/${userId}/todolists`), {
+      //         input: title,
+      //         taskCheck: check // Inicialmente vazio
+      //     });
+      // }
+      //
+      // // Exemplo de uso
+      // addTodolist('lista aqui', "")
+      //   .then(docRef => {
+      //     console.log('Todolist adicionada com ID:', docRef.id);
+      //   })
+      //   .catch(error => {
+      //     console.error('Erro ao adicionar Todolist:', error);
+      //   });
+
 
 
     // Atualizar o estado de conclusão de uma tarefa
@@ -91,20 +103,20 @@ signInWithEmailAndPassword(auth, email, password)
 
 
     // Excluir uma tarefa de um Todolist
-  //   function deleteTask(todolistId) {
-  //       const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
-  //       const taskRef = doc(db, `teste-todo/${userId}/todolists/${todolistId}`);
-  //       return deleteDoc(taskRef);
-  //   }
-  //
-  //   // Exemplo de uso
-  //   deleteTask('WX9NGxn5XZ7xVCq57sRD')
-  //     .then(() => {
-  //       console.log('Tarefa excluída com sucesso');
-  //     })
-  //     .catch(error => {
-  //       console.error('Erro ao excluir tarefa:', error);
-  //     });
+    // function deleteTask(todolistId) {
+    //     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+    //     const taskRef = doc(db, `teste-todo/${userId}/todolists/${todolistId}`);
+    //     return deleteDoc(taskRef);
+    // }
+    //
+    // // Exemplo de uso
+    // deleteTask('yU9RhmhAsOWlfgGccZoX')
+    //   .then(() => {
+    //     console.log('Tarefa excluída com sucesso');
+    //   })
+    //   .catch(error => {
+    //     console.error('Erro ao excluir tarefa:', error);
+    //   });
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -112,6 +124,70 @@ signInWithEmailAndPassword(auth, email, password)
     console.error('Erro ao fazer login:', errorMessage);
   });
 
+
+  onAuthStateChanged(auth, (user) => {
+
+
+    if(user) {
+     // console.log('user', user.email)
+        document.querySelector('#formDoInput').addEventListener('submit', (event) => {
+          event.preventDefault();
+
+
+
+          // Adicionar uma Todolist para o usuário atual
+          function addTodolist(title, check) {
+              const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+              console.log('id',userId)
+              return addDoc(collection(db, `teste-todo/${userId}/todolists`), {
+                  input: title,
+                  taskCheck: check // Inicialmente vazio
+              });
+          }
+
+          const inputValue = document.querySelector('#todoInput').value.trim();
+          // Exemplo de uso
+          addTodolist(inputValue, "")
+            .then(docRef => {
+              document.querySelector('#todoInput').value = '';
+              console.log('Todolist adicionada com ID:', docRef.id);
+            })
+            .catch(error => {
+              console.error('Erro ao adicionar Todolist:', error);
+            });
+        })
+
+
+        // Obtém Todolists do usuário atual
+          function getTodolists() {
+              const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+              return getDocs(collection(db, `teste-todo/${userId}/todolists`));
+          }
+
+          let counter = 1;
+          // Exemplo de uso
+          getTodolists()
+            .then(querySnapshot => {
+              querySnapshot.forEach(doc => {
+                console.log(doc.id, '=>', doc.data());
+
+                const div = document.createElement('div');
+
+                div.innerHTML = `
+                  <div class='card' data-id='${doc.id}'>
+                    <strong>${counter++}: ${doc.data().input}</strong>
+                  </div>
+                 `;
+
+                 document.querySelector('#content').appendChild(div)
+              });
+            })
+            .catch(error => {
+              console.error('Erro ao obter Todolists:', error);
+            });
+
+    }
+  })
 
 // // Adicionar uma Todolist para o usuário atual
 // function addTodolist(title) {
