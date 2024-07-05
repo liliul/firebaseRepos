@@ -5,9 +5,12 @@ import { getFirestore, collection, doc, addDoc, getDocs, updateDoc, deleteDoc } 
 
 // Configuração do Firebase
 const firebaseConfig = {
-  apiKey: 'AIzaSyAGKFgO7myWz9FsQhvsG6CsawgzYJtOLjI',
-  authDomain: 'todolist-1ca60.firebaseapp.com',
-  projectId: 'todolist-1ca60'
+  apiKey: "AIzaSyD63f-2H_x9R209p8ufzqAY-7cgyp9Ob2M",
+  authDomain: "userstodo-3c20f.firebaseapp.com",
+  projectId: "userstodo-3c20f",
+  storageBucket: "userstodo-3c20f.appspot.com",
+  messagingSenderId: "164337943656",
+  appId: "1:164337943656:web:6de1ee07d018d91e1da7dd"
 };
 
 // Inicialização do Firebase App
@@ -16,16 +19,34 @@ const firebaseApp = initializeApp(firebaseConfig);
 // Obter instâncias dos serviços do Firebase
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
+console.log(db)
 
-
-const email = 'user@example.com';
-const password = 'password123';
+const email = 'gokufirestore@email.com';
+const password = '123456';
 
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Usuário autenticado com sucesso
     const user = userCredential.user;
     console.log('Usuário logado:', user.uid);
+
+    // Adicionar uma Todolist para o usuário atual
+    // function addTodolist(title) {
+    //     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+    //     return addDoc(collection(db, `teste-todo/${userId}/todolists`), {
+    //         input: title,
+    //         taskCheck: [] // Inicialmente vazio
+    //     });
+    // }
+
+    // Exemplo de uso
+    // addTodolist('Minha Lista')
+    //   .then(docRef => {
+    //     console.log('Todolist adicionada com ID:', docRef.id);
+    //   })
+    //   .catch(error => {
+    //     console.error('Erro ao adicionar Todolist:', error);
+    //   });
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -34,74 +55,74 @@ signInWithEmailAndPassword(auth, email, password)
   });
 
 
-// Adicionar uma Todolist para o usuário atual
-function addTodolist(title) {
-    const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
-    return addDoc(collection(db, `teste-todo/${userId}/todolists`), {
-        title: title,
-        tasks: [] // Inicialmente vazio
-    });
-}
+// // Adicionar uma Todolist para o usuário atual
+// function addTodolist(title) {
+//     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+//     return addDoc(collection(db, `teste-todo/${userId}/todolists`), {
+//         input: title,
+//         taskCheck: [] // Inicialmente vazio
+//     });
+// }
 
-// Exemplo de uso
-addTodolist('Minha Lista')
-  .then(docRef => {
-    console.log('Todolist adicionada com ID:', docRef.id);
-  })
-  .catch(error => {
-    console.error('Erro ao adicionar Todolist:', error);
-  });
+// // Exemplo de uso
+// addTodolist('Minha Lista')
+//   .then(docRef => {
+//     console.log('Todolist adicionada com ID:', docRef.id);
+//   })
+//   .catch(error => {
+//     console.error('Erro ao adicionar Todolist:', error);
+//   });
 
 
 // Obtém Todolists do usuário atual
-function getTodolists() {
-    const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
-    return getDocs(collection(db, `teste-todo/${userId}/todolists`));
-}
+// function getTodolists() {
+//     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+//     return getDocs(collection(db, `teste-todo/${userId}/todolists`));
+// }
 
-// Exemplo de uso
-getTodolists()
-  .then(querySnapshot => {
-    querySnapshot.forEach(doc => {
-      console.log(doc.id, '=>', doc.data());
-    });
-  })
-  .catch(error => {
-    console.error('Erro ao obter Todolists:', error);
-  });
+// // Exemplo de uso
+// getTodolists()
+//   .then(querySnapshot => {
+//     querySnapshot.forEach(doc => {
+//       console.log(doc.id, '=>', doc.data());
+//     });
+//   })
+//   .catch(error => {
+//     console.error('Erro ao obter Todolists:', error);
+//   });
 
 
 // Atualizar o estado de conclusão de uma tarefa
-function updateTaskCompletion(todolistId, taskId, completed) {
-    const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
-    const taskRef = doc(db, `teste-todo/${userId}/todolists/${todolistId}/tasks/${taskId}`);
-    return updateDoc(taskRef, {
-        completed: completed
-    });
-}
+// function updateTaskCompletion(todolistId, taskId, completed) {
+//     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+//     const taskRef = doc(db, `teste-todo/${userId}/todolists/${todolistId}/tasks/${taskId}`);
+//     return updateDoc(taskRef, {
+//         completed: completed
+//     });
+// }
 
-// Exemplo de uso
-updateTaskCompletion('todolistId', 'taskId', true)
-  .then(() => {
-    console.log('Estado de conclusão da tarefa atualizado com sucesso');
-  })
-  .catch(error => {
-    console.error('Erro ao atualizar estado de conclusão da tarefa:', error);
-  });
+// // Exemplo de uso
+// updateTaskCompletion('todolistId', 'taskId', true)
+//   .then(() => {
+//     console.log('Estado de conclusão da tarefa atualizado com sucesso');
+//   })
+//   .catch(error => {
+//     console.error('Erro ao atualizar estado de conclusão da tarefa:', error);
+//   });
 
 
 // Excluir uma tarefa de um Todolist
-function deleteTask(todolistId, taskId) {
-    const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
-    const taskRef = doc(db, `teste-todo/${userId}/todolists/${todolistId}/tasks/${taskId}`);
-    return deleteDoc(taskRef);
-}
+// function deleteTask(todolistId, taskId) {
+//     const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+//     const taskRef = doc(db, `teste-todo/${userId}/todolists/${todolistId}/tasks/${taskId}`);
+//     return deleteDoc(taskRef);
+// }
 
-// Exemplo de uso
-deleteTask('todolistId', 'taskId')
-  .then(() => {
-    console.log('Tarefa excluída com sucesso');
-  })
-  .catch(error => {
-    console.error('Erro ao excluir tarefa:', error);
-  });
+// // Exemplo de uso
+// deleteTask('todolistId', 'taskId')
+//   .then(() => {
+//     console.log('Tarefa excluída com sucesso');
+//   })
+//   .catch(error => {
+//     console.error('Erro ao excluir tarefa:', error);
+//   });
