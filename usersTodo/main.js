@@ -32,11 +32,11 @@ document.querySelector('.container').innerHTML = `
   <section id='content'></section>
 `;
 
-const email = 'gokufirestore@email.com';
-const password = '123456';
-
-// const email = 'narutofirestore@email.com';
+// const email = 'gokufirestore@email.com';
 // const password = '123456';
+
+const email = 'narutofirestore@email.com';
+const password = '123456';
 
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -176,6 +176,7 @@ signInWithEmailAndPassword(auth, email, password)
                 div.innerHTML = `
                   <div class='card' data-id='${doc.id}'>
                     <strong>${counter++}: ${doc.data().input}</strong>
+                    <button data-buttondelete='${doc.id}'>Deletar</button>
                   </div>
                  `;
 
@@ -185,6 +186,30 @@ signInWithEmailAndPassword(auth, email, password)
             .catch(error => {
               console.error('Erro ao obter Todolists:', error);
             });
+
+
+  // excluído items no firestore
+          document.querySelector('#content').addEventListener('click', (e) => {
+              // Excluir uma tarefa de um Todolist
+                function deleteTask(todolistId) {
+                    const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+                    const taskRef = doc(db, `teste-todo/${userId}/todolists/${todolistId}`);
+                    return deleteDoc(taskRef);
+                }
+
+                const idDelete = e.target.dataset.buttondelete;
+                console.log('id-> ', idDelete)
+
+                if (idDelete) {
+                  deleteTask(idDelete)
+                  .then(() => {
+                    console.log('Tarefa excluída com sucesso');
+                  })
+                  .catch(error => {
+                    console.error('Erro ao excluir tarefa:', error);
+                  });
+                }
+          })
 
     }
   })
