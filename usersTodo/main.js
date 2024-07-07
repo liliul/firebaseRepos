@@ -150,6 +150,7 @@ signInWithEmailAndPassword(auth, email, password)
           addTodolist(inputValue, "")
             .then(docRef => {
               document.querySelector('#todoInput').value = '';
+              window.location.reload();
               console.log('Todolist adicionada com ID:', docRef.id);
             })
             .catch(error => {
