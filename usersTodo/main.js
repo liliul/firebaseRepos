@@ -176,6 +176,7 @@ signInWithEmailAndPassword(auth, email, password)
 
                 div.innerHTML = `
                   <div class='card' data-id='${doc.id}'>
+                    <input type="checkbox" ${doc.data().taskCheck} name="checkTodo" data-checked="${doc.id}" />
                     <strong>${counter++}: ${doc.data().input}</strong>
                     <button data-buttondelete='${doc.id}'>Deletar</button>
                   </div>
@@ -210,6 +211,36 @@ signInWithEmailAndPassword(auth, email, password)
                     console.error('Erro ao excluir tarefa:', error);
                   });
                 }
+          })
+
+ // update
+          document.querySelector('#content').addEventListener('click', (e) => {
+            const idDataChecked = e.target.dataset.checked;
+
+
+
+            if (idDataChecked) {
+              // Atualizar o estado de conclusão de uma tarefa
+                function updateTaskCompletion(todolistId, check) {
+                    const userId = auth.currentUser.uid; // Obtém o ID do usuário autenticado
+                    const taskRef = doc(db, `teste-todo/${userId}/todolists/${todolistId}`);
+                    return updateDoc(taskRef, {
+                        taskCheck: check
+                    });
+                }
+
+                const checkbox = document.querySelector(`[data-checked='${idDataChecked}']`).checked;
+                const checando = checkbox ? 'checked' : '';
+
+                // Exemplo de uso
+                updateTaskCompletion(idDataChecked, checando)
+                  .then(() => {
+                    console.log('Estado de conclusão da tarefa atualizado com sucesso');
+                  })
+                  .catch(error => {
+                    console.error('Erro ao atualizar estado de conclusão da tarefa:', error);
+                  });
+            }
           })
 
     }
