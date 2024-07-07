@@ -217,8 +217,6 @@ signInWithEmailAndPassword(auth, email, password)
           document.querySelector('#content').addEventListener('click', (e) => {
             const idDataChecked = e.target.dataset.checked;
 
-
-
             if (idDataChecked) {
               // Atualizar o estado de conclusão de uma tarefa
                 function updateTaskCompletion(todolistId, check) {
