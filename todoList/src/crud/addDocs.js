@@ -2,27 +2,35 @@ import { db } from '../config/firestore.js'
 import { collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js'
 import { mensagem } from '../utils/mensagem.js';
 
-const idInputTask = document.getElementById('idInputTask');
-const buttonTask = document.getElementById('button-task');
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
-buttonTask.addEventListener('click', async () => {
-    const eventInput = idInputTask.value.trim()
+const auth = getAuth();
 
-    if (eventInput) {
-        document.querySelector('#idInputTask').value = '';
-        
-        try {
+onAuthStateChanged(auth, (user) => {
+    const idInputTask = document.getElementById('idInputTask');
+    const buttonTask = document.getElementById('button-task');
 
-            const adicionarDocs = await addDoc(collection(db, 'todo-list'), {
-                input: eventInput,
-                taskCheck: ""
-            })
+    buttonTask.addEventListener('click', async () => {
+        const eventInput = idInputTask.value.trim()
 
-            mensagem('Tarefa Criada com Sucesso!');
+        if (eventInput) {
+            document.querySelector('#idInputTask').value = '';
+            
+            const userId = auth.currentUser.uid;
+            
+            try {
 
-        } catch (e) {
-            console.error('addDoc', e)
+                const adicionarDocs = await addDoc(collection(db, `teste-list/${userId}/todolist/`), {
+                    input: eventInput,
+                    taskCheck: ""
+                })
+
+                mensagem('Tarefa Criada com Sucesso!');
+
+            } catch (e) {
+                console.error('addDoc', e)
+            }
+
         }
-
-    }
+    })    
 })

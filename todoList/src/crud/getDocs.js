@@ -1,12 +1,17 @@
 import { db } from '../config/firestore.js';
 import { collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js';
 
-const onSnap = (callback) => onSnapshot(collection(db, 'todo-list'), callback);
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
-window.addEventListener('DOMContentLoaded', () => {
+const auth = getAuth();
+
+onAuthStateChanged(auth, (user) => {
+	const userId = auth.currentUser.uid;
+	const onSnap = (callback) => onSnapshot(collection(db, `teste-list/${userId}/todolist/`), callback);
+
 	onSnap(querySnapshot => {
 		document.querySelector('#add-task').innerHTML = '';
-
+		
 		querySnapshot.forEach((doc) => {
 			const { input, taskCheck } = doc.data();
 

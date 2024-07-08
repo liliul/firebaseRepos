@@ -1,19 +1,27 @@
 import { db } from '../config/firestore.js';
 import { doc, updateDoc } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js';
 
-const containerAddTask = document.querySelector('.main_content');
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
-containerAddTask.addEventListener('change', async (e) => {
-    const eventCheck = e.target.dataset.checked;
+const auth = getAuth();
 
-    if (eventCheck) {
-        const checkRef = doc(db, "todo-list", eventCheck);
+onAuthStateChanged(auth, (user) => {
+    const containerAddTask = document.querySelector('.main_content');
 
-        const checkedbox = document.querySelector(`[data-checked="${eventCheck}"]`).checked;
-        const checked = checkedbox ? "checked" : "";
+    containerAddTask.addEventListener('change', async (e) => {
+        const eventCheck = e.target.dataset.checked;
+        const userId = auth.currentUser.uid;
 
-        await updateDoc(checkRef, {
-            taskCheck: checked
-        })
-    }
+        if (eventCheck) {
+            const checkRef = doc(db, `teste-list/${userId}/todolist/`, eventCheck);
+
+            const checkedbox = document.querySelector(`[data-checked="${eventCheck}"]`).checked;
+            const checked = checkedbox ? "checked" : "";
+
+            await updateDoc(checkRef, {
+                taskCheck: checked
+            })
+        }
+    })    
 })
+

@@ -1,10 +1,14 @@
 import { db } from '../config/firestore.js';
 import { collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js';
 
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
-const onSnap = (callback) => onSnapshot(collection(db, 'todo-list'), callback);
+const auth = getAuth();
 
-window.addEventListener('DOMContentLoaded', () => {
+onAuthStateChanged(auth, (user) => {
+	const userId = auth.currentUser.uid;
+	const onSnap = (callback) => onSnapshot(collection(db, `teste-list/${userId}/todolist/`), callback);
+
 	onSnap(querySnapshot => {
 		
 		let counter  = 0;
@@ -50,4 +54,5 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 
 	})
+
 })
