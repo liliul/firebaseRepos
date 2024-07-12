@@ -28,8 +28,7 @@ redefinirSenha.addEventListener('click', (e) => {
 
 		emailVerificadoMensagem('.isolate-login', `Email enviado para ${emailRedefinirSenha}`);
 		
-
-		
+		setTimeout(() => {window.location.reload()}, 5000);
 	})
 	
 })
