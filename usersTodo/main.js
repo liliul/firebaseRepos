@@ -206,6 +206,7 @@ onAuthStateChanged(auth, (user) => {
         deleteTask(idDelete)
           .then(() => {
             console.log('Tarefa excluída com sucesso');
+            window.location.reload();
           })
           .catch(error => {
             console.error('Erro ao excluir tarefa:', error);
