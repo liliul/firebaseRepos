@@ -3,3 +3,23 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+body {
+	background-color: #212121;
+	color: #DDD;
+}
+
+#formDoInput {
+	margin: 20px 0px 20px 20px;
+}
+
+#todoInput {
+	outline: none;
+	height: 28px;
+	width: 450px;
+	border-radius: 6px;
+	padding: 5px 10px;
+	background-color: #242424;
+	color: #DDD;
+	border: 1px solid #DDD;
+}
