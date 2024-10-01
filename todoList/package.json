@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "sass -w src/style/sass/main.scss:src/style/style.css & live-server --no-browser --port=8081"
+    "dev": "sass -w src/style/sass/main.scss:src/style/style.css & live-server --no-browser --port=8081",
+    "pre": "live-server --no-browser --port=8081"
   },
   "keywords": [],
   "author": "",
