@@ -8,7 +8,7 @@ export function mensagem(mensagem) {
     divMensagem.setAttribute('id', 'mensagem');
     divMensagem.innerHTML = `${msSucefull(mensagem)}`;
     
-    document.querySelector('body').appendChild(divMensagem);
+    document.querySelector('#conteinerDeMensagens').appendChild(divMensagem);
 
     setTimeout(() => {
         document.getElementById('mensagem').remove();
