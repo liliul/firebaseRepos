@@ -30,6 +30,8 @@ export const api = {
 ### Regras do fireStore
 
 ```bash
+# criar o banco de dados no firestore
+# ex: iniciar coleção > teste-list
 
 # so permite acesso ao firestore com autenticação
 allow read, write: if request.auth != null;
