@@ -7,3 +7,4 @@ import './crud/putDocs.js'
 
 import './utils/createTasksLength.js'
 import './login/signOut.js'
+import './login/emailVerified.js'
