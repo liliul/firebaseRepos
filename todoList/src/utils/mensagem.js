@@ -34,6 +34,8 @@ export function msSucefull(mensagem) {
  * @param {string} mensagem da function emailVerificadoHtml
  * */
 export function emailVerificadoMensagem(element, mensagem) {
+	if (document.getElementById('emailVerificadoMensagem')) return
+
 	const sectionMensagem = document.createElement('section');
 	sectionMensagem.setAttribute('id', 'emailVerificadoMensagem');
 	sectionMensagem.innerHTML = `${emailVerificadoHtml(mensagem)}`;
