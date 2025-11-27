@@ -11,7 +11,8 @@ onAuthStateChanged(auth, (user) => {
 
 	onSnap(querySnapshot => {
 		document.querySelector('#add-task').innerHTML = '';
-		
+		document.querySelector('.isolate').removeAttribute('style')
+				
 		querySnapshot.forEach((doc) => {
 			const { input, taskCheck } = doc.data();
 

@@ -9,13 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="./src/style/style.css">
 </head>
 <body>
-	<!-- login -->
-	<div class="formLogin">
-		<small class="s-email"></small>
-		<button class="b-signOut">Deslogar</button>
-	</div>
 
-	<section class="isolate">
+	<section class="isolate" style="display: none;">
+		<!-- login -->
+		<div class="formLogin">
+			<small class="s-email"></small>
+			<button class="b-signOut">Deslogar</button>
+		</div>
 
 		<!-- header -->
 		<header class="container_header">
@@ -83,10 +83,11 @@
 			<section class="main_right"></section>
 		</main>
 
+		<!-- mensagens -->
+		<section id="conteinerDeMensagens"></section>
+
 	</section>
 	
-	<section id="conteinerDeMensagens"></section>
-
 <!-- 	<script  src="./src/main.js"></script> -->
 	<script src="./src/index.js" type="module"></script>
 </body>
