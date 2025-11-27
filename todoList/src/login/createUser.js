@@ -6,7 +6,7 @@ import { emailVerificadoMensagem } from '../utils/mensagem.js';
 const clickButtonCriar = document.getElementById('b-criar');
 
 clickButtonCriar.addEventListener('click', () => {
-	document.querySelector('.div-redefinir').remove();
+	document.querySelector('.div-redefinir').style.display = 'none';
 
 	document.querySelector('.form-control').innerHTML = `
 		<form class="form-login" data-criar-conta="createuser">
@@ -24,7 +24,10 @@ clickButtonCriar.addEventListener('click', () => {
 			<button class="button-login" type="submit">Enviar</button>
 		</form>
 	`;
-
+	
+	clickButtonCriar.setAttribute('disabled', true)
+	document.querySelector('#b-login').removeAttribute('disabled')
+	
 	const criarUser = document.querySelector('[data-criar-conta="createuser"]');
 
 	criarUser.addEventListener('submit', (e) => {

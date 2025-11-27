@@ -15,16 +15,16 @@
 			<h1 class="h1-login">Firebase Authentication</h1>
 			
 			<div class="b-forms">
-				<button id="b-login" class="b-forms-c">Login</button>
+				<button id="b-login" class="b-forms-c" disabled="true">Login</button>
 				<button id="b-criar" class="b-forms-c">Criar Conta</button>
 			</div>
 
 			<article class="form-control">
-				<form class="form-login" data-authentication="auth">
+				<form class="form-login" id="auth">
 					<h2 class="h2-login">Fazer Login</h2>
 				
 					<label class="label-login" for="Email">Email</label>
-					<input class="input-login" type="email" id="Email" name="Email" required placeholder="Digite seu email">
+					<input class="input-login" type="email" id="Email" name="Email" required placeholder="Digite seu email" autocomplete="email">
 					
 					<label class="label-login" for="PassWord">Password</label>
 					<input class="input-login" type="password" id="PassWord" name="PassWord" required placeholder="Digite sua senha">
