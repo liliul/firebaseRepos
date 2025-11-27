@@ -1,3 +1,5 @@
+import { AuthSignIn } from "../login/signIn.js";
+
 const iconSelect = `
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
 <title>checkbox-checked</title>
@@ -5,6 +7,32 @@ const iconSelect = `
 </svg>
 `;
 
+export function renderizarTelaLogin() {
+    document.querySelector('.form-control').innerHTML = `
+        <form class="form-login" id="auth">
+			<h2 class="h2-login">Fazer Login</h2>
+		
+			<label class="label-login" for="Email">Email</label>
+			<input class="input-login" type="email" id="Email" name="Email" required placeholder="Digite seu email" autocomplete="email">
+			
+			<label class="label-login" for="PassWord">Password</label>
+			<input class="input-login" type="password" id="PassWord" name="PassWord" required placeholder="Digite sua senha">
+
+			<button class="button-login" type="submit">Enviar</button>
+		</form>
+    `;
+
+    const clickButtonLogin = document.getElementById('b-login');
+    const clickButtonCriar = document.getElementById('b-criar');
+
+    clickButtonCriar.removeAttribute('disabled');
+    clickButtonLogin.setAttribute('disabled', true);
+    document.querySelector('.div-redefinir').style.display = 'flex';
+
+	AuthSignIn()
+}
+
 export const utils = {
-	iconSelect
+	iconSelect,
+	renderizarTelaLogin
 }
