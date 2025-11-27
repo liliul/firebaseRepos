@@ -11,10 +11,11 @@ onAuthStateChanged(auth, (user) => {
     
     setTimeout(() => {
       window.location.href = "todoList.html"; 
-    }, 1000)
-
+    }, 500)
+    
   } else {
-   
+    
+    document.querySelector(".isolate-login").removeAttribute('style')
     console.log("Usuário não logado");
    
   }
