@@ -2,10 +2,15 @@ import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/
 
 const auth = getAuth();
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
 
   if (user) {
-    if (!auth.currentUser.emailVerified) {
+    await user.reload();
+    user = auth.currentUser;
+
+    if (!user.emailVerified) {
+      
+      document.querySelector(".isolate-login").removeAttribute('style');
       return;
     }
     
@@ -15,7 +20,7 @@ onAuthStateChanged(auth, (user) => {
     
   } else {
     
-    document.querySelector(".isolate-login").removeAttribute('style')
+    document.querySelector(".isolate-login").removeAttribute('style');
     console.log("Usuário não logado");
    
   }
