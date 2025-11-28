@@ -37,9 +37,21 @@ clickButtonCriar.addEventListener('click', () => {
 		const password = document.getElementById('PassWord-criar').value.trim();
 		const Confi    = document.getElementById('Confi').value.trim();
 		
-		if (password === Confi) {	
+		const validandoEmail = utils.ValidandoEmail(email);
+		if (validandoEmail.error) {
+			emailVerificadoMensagem('.isolate-login', `Erro no email: ${validandoEmail.error}`);
+			return
+		}
+
+		const regexSenha = utils.ValidandoSenha(password);
+		if (!regexSenha.checkSenha) {
+			emailVerificadoMensagem('.isolate-login', 'Senha invalida deve conter 8 caracteres com pelo menos uma letra maiúscula ex: A.');
+			return
+		}
+
+		if (regexSenha.password === Confi) {	
 			const auth = getAuth();
-			createUserWithEmailAndPassword(auth, email, password)
+			createUserWithEmailAndPassword(auth, validandoEmail.original, regexSenha.password)
 			  .then((userCredential) => {
 			    const user = userCredential.user;
 

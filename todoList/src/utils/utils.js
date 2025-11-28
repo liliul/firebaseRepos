@@ -97,10 +97,17 @@ function ValidandoEmail(email) {
   }
 }
 
+function ValidandoSenha(senha) {
+	const regex = /^(?=.*[A-Z])[^\s]{8,}$/
+	const senhaR = regex.test(senha)
+ 
+	return { checkSenha: senhaR, password: senha }
+}
 
 export const utils = {
 	iconSelect,
 	renderizarTelaLogin,
 	renderTelaError,
-	ValidandoEmail
+	ValidandoEmail,
+	ValidandoSenha
 }
