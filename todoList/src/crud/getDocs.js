@@ -6,6 +6,11 @@ import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/
 const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
+	if (!auth.currentUser) {
+        console.warn("Usuário deslogado — getUserDocs cancelado");
+        return []; 
+    }
+
 	const userId = auth.currentUser.uid;
 	const onSnap = (callback) => onSnapshot(collection(db, `teste-list/${userId}/todolist/`), callback);
 

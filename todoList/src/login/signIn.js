@@ -12,7 +12,12 @@ import { emailVerificadoMensagem } from '../utils/mensagem.js';
 // fazer login
 export function AuthSignIn() {
 	const authSignIn = document.querySelector('#auth');
-
+	
+	if (!authSignIn) {
+		console.warn('Formulário #auth não encontrado.');
+		return;
+	}
+	
 	authSignIn.addEventListener('submit', (event) => {
 		event.preventDefault();
 		
