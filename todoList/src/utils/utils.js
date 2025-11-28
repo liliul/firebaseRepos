@@ -32,7 +32,43 @@ export function renderizarTelaLogin() {
 	AuthSignIn()
 }
 
+/**
+ * Dados necessários para renderizar a tela de erro.
+ * @typedef {Object} RenderErrorData
+ * @property {string} url - Caminho para o arquivo HTML que será carregado.
+ * @property {string} [tag='body'] - Seletor CSS do elemento onde o conteúdo será inserido.
+ * @property {string} titlePagina - Título que será aplicado ao documento.
+ * @property {string} mensagem - Mensagem que será exibida no elemento #msg-error.
+ */
+
+/**
+ * Renderiza uma tela de erro dentro da página, carregando HTML externo.
+ *
+ * @param {RenderErrorData} data - Objeto com as informações para renderização.
+ * @returns {Promise<void>} - A função é assíncrona e não retorna nada.
+ */
+
+async function renderTelaError(data) {
+	const { url, tag = 'body', titlePagina, mensagem } = data;
+
+	/** @type {Response} */
+	const req = await fetch(url);
+
+	/** @type {string} */
+	const res = await req.text();
+
+	document.title = titlePagina;
+	document.querySelector(tag).innerHTML = res;
+
+	if (req.ok) {
+		document.querySelector("#msg-error").textContent = mensagem
+	}
+
+	return true;
+}
+
 export const utils = {
 	iconSelect,
-	renderizarTelaLogin
+	renderizarTelaLogin,
+	renderTelaError
 }
