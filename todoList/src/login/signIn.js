@@ -14,7 +14,7 @@ export function AuthSignIn() {
 	const authSignIn = document.querySelector('#auth');
 	
 	if (!authSignIn) {
-		console.warn('Formulário #auth não encontrado.');
+		console.warn('Formulário não encontrado.');
 		return;
 	}
 	
@@ -24,8 +24,10 @@ export function AuthSignIn() {
 		const email    = event.target.Email.value.trim();
 		const password = event.target.PassWord.value.trim();
 
+		const validandoEmail = utils.ValidandoEmail(email);
+		
 		const auth = getAuth();
-		signInWithEmailAndPassword(auth, email, password)
+		signInWithEmailAndPassword(auth, validandoEmail.original, password)
 		.then((userCredential) => {
 
 			const user = userCredential.user;

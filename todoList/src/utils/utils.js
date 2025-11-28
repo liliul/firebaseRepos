@@ -67,8 +67,40 @@ async function renderTelaError(data) {
 	return true;
 }
 
+function ValidandoEmail(email) {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  if (!emailRegex.test(email)) {
+    return { error: "Email inválido" };
+  }
+
+  const [ parteInicial, dominio] = email.toLowerCase().split("@");
+
+  const provedor = dominio.split(".")[0];         
+  const pontoCom = dominio.split(".").slice(1).join(".");
+
+  const provedores = ["gmail", "outlook", "hotmail", "yahoo", "icloud", "live", "email"]
+
+  const checarEmail = provedores.includes(provedor);
+
+  if (!checarEmail) {
+	return { error: "Provedor desse email invalido." };
+  }
+
+  return {
+    original: email,
+    usuario: parteInicial,
+    provedorEmail: provedor,
+    dominioCompleto: dominio,
+    tld: pontoCom,
+	checkEmail: checarEmail
+  }
+}
+
+
 export const utils = {
 	iconSelect,
 	renderizarTelaLogin,
-	renderTelaError
+	renderTelaError,
+	ValidandoEmail
 }
