@@ -51,6 +51,8 @@ onAuthStateChanged(auth, (user) => {
 			} else {
 				document.querySelector(`[data-through="${doc.id}"]`).removeAttribute('style');
 			}
+
+			document.getElementById("c-loading").classList.add('hidden');
 		})
 	})
 })
