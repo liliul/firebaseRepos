@@ -398,8 +398,9 @@
   gap: 10px;
 }
 #conteinerDeMensagens #mensagem .m-container {
-  width: 190px;
+  width: fit-content;
   height: 84px;
+  padding: 0px 12px 0px 12px;
   border-radius: 0.8rem;
   background-color: #1E6F9F;
 }

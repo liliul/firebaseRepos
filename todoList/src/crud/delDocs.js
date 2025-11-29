@@ -16,7 +16,7 @@ onAuthStateChanged(auth, (user) => {
         if (eventDel) {
             await deleteDoc(doc(db, `teste-list/${userId}/todolist/`, eventDel));
 
-            mensagem('Tarefa Deletada com Sucesso');
+            mensagem(`Tarefa Deletada com Sucesso. ID: ${eventDel}`);
         }
     })
 })

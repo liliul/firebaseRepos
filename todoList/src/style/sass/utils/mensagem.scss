@@ -12,8 +12,9 @@
 	#mensagem {
 
 		.m-container {
-			width: 190px;
+			width: fit-content;
 			height: 84px;
+			padding: 0px 12px 0px 12px;
 			border-radius: $radius_i_b;
 		
 			background-color: $button_bg;  
