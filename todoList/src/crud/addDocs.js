@@ -20,7 +20,7 @@ onAuthStateChanged(auth, (user) => {
             
             try {
 
-                const adicionarDocs = await addDoc(collection(db, `teste-list/${userId}/todolist/`), {
+                await addDoc(collection(db, `teste-list/${userId}/todolist`), {
                     input: eventInput,
                     taskCheck: ""
                 })
