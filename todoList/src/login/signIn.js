@@ -25,14 +25,18 @@ export function AuthSignIn() {
 		const password = event.target.PassWord.value.trim();
 
 		const validandoEmail = utils.ValidandoEmail(email);
+		if (validandoEmail.error) {
+			emailVerificadoMensagem('.isolate-login', `Erro no email: ${validandoEmail.error}`);
+			return
+		}
 		
 		const auth = getAuth();
 		signInWithEmailAndPassword(auth, validandoEmail.original, password)
 		.then((userCredential) => {
-
+			
 			const user = userCredential.user;
 			
-			if (!auth.currentUser.emailVerified) {
+			if (!user.emailVerified) {
 				emailVerificadoMensagem('.isolate-login', `Verifica seu email: ${email} na sua caixa de email.`);
 				return;
 			}
@@ -44,11 +48,20 @@ export function AuthSignIn() {
 			}, 2000)
 		})
 		.catch((error) => {
-			const errorCode = error.code;
-			const errorMessage = error.message;
-			console.error('Code: ', errorCode, 'message: ', errorMessage);
+			const mensagens = {
+				"auth/invalid-credential": "Email ou senha incorretos.",
+				"auth/invalid-email": "Email no formato inválido.",
+				"auth/user-disabled": "Esta conta está desativada.",
+				"auth/user-not-found": "Nenhuma conta com este email.",
+			}
+			const erroMensagem = mensagens[error.code] || "Erro ao fazer login. Tente novamente.";
+			emailVerificadoMensagem('.isolate-login', erroMensagem);
 			
-			document.querySelector('.h2-login').innerHTML = `<span style="color: tomato;">Erro ao fazer Login Email ou Senha invalido</span>`;
+			// const errorCode = error.code;
+			// const errorMessage = error.message;
+			// console.error('Code: ', errorCode, 'message: ', errorMessage);
+			
+			// document.querySelector('.h2-login').innerHTML = `<span style="color: tomato;">Erro ao fazer Login Email ou Senha invalido</span>`;
 		});
 
 	})
