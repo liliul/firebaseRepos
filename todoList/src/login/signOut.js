@@ -1,5 +1,6 @@
 import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 import { utils } from '../utils/utils.js';
+import { constants } from '../constants/index.js';
 
 const auth = getAuth();
 
@@ -29,10 +30,10 @@ onAuthStateChanged(auth, (user) => {
     // `;
 
     utils.renderTelaError({
-      url: './src/views/erro-404.html',
-      tag: 'body',
-      titlePagina: 'Usuario deslogado',
-      mensagem: 'Erro você não estar Autenticado no firebase.',
+      url: constants.URL_TELA_ERROR,
+      tag: constants.HTML_TAG,
+      titlePagina: constants.TITLE_PAGINA,
+      mensagem: constants.MENSAGEM,
     }).then(() => {
 
       document.getElementById('ErroAuth').addEventListener('click', () => {
