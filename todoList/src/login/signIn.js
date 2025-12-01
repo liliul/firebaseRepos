@@ -2,6 +2,7 @@ import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/fir
 
 import { utils } from '../utils/utils.js';
 import { emailVerificadoMensagem } from '../utils/mensagem.js';
+import { constants } from '../constants/index.js';
  
 // let email = 'gokufirestore@email.com'
 // let password = '123456'
@@ -49,10 +50,10 @@ export function AuthSignIn() {
 		})
 		.catch((error) => {
 			const mensagens = {
-				"auth/invalid-credential": "Email ou senha incorretos.",
-				"auth/invalid-email": "Email no formato inválido.",
-				"auth/user-disabled": "Esta conta está desativada.",
-				"auth/user-not-found": "Nenhuma conta com este email.",
+				"auth/invalid-credential": constants.EMAIL_SENHA_INCORRETO,
+				"auth/invalid-email": constants.EMAIL_FORMATO_INVALIDO,
+				"auth/user-disabled": constants.CONTA_DESATIVADA,
+				"auth/user-not-found": constants.NENHUMA_CONTA_COM_ESTE_EMAIL,
 			}
 			const erroMensagem = mensagens[error.code] || "Erro ao fazer login. Tente novamente.";
 			emailVerificadoMensagem('.isolate-login', erroMensagem);
