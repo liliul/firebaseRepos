@@ -64,7 +64,7 @@ clickButtonCriar.addEventListener('click', () => {
 	   					document.querySelector('.h2-login').innerHTML = `<i>${utils.iconSelect}</i>`;
 
 			   			setTimeout(() => {
-			   				window.location.reload();
+							utils.renderizarTelaLogin();
 			   			}, 3500)
 	   				})
 
