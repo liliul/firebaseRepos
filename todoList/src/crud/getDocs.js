@@ -6,13 +6,13 @@ import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/
 const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
-	if (!auth.currentUser) {
+	if (!user) {
         console.warn("Usuário deslogado — getUserDocs cancelado");
         return []; 
     }
 
-	const userId = auth.currentUser.uid;
-	const onSnap = (callback) => onSnapshot(collection(db, `teste-list/${userId}/todolist/`), callback);
+	const userId = user.uid;
+	const onSnap = (callback, errorCallback) => onSnapshot(collection(db, `teste-list/${userId}/todolist/`), callback, errorCallback);
 
 	onSnap(querySnapshot => {
 		document.querySelector('#add-task').innerHTML = '';
@@ -52,7 +52,16 @@ onAuthStateChanged(auth, (user) => {
 				document.querySelector(`[data-through="${doc.id}"]`).removeAttribute('style');
 			}
 
-			document.getElementById("c-loading").classList.add('hidden');
 		})
-	})
+
+		document.getElementById("c-loading").classList.add('hidden');
+	},
+	(error) => {
+		console.error('Erro ao buscar tarefas: ', error);
+		
+		document.getElementById("c-loading").classList.add('hidden');
+		
+		alert("Erro ao carregar as tarefas.");
+	}
+	)
 })
