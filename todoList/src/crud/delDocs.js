@@ -7,11 +7,13 @@ import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/
 const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
+    if (!user) return
+
     const containerAddTask = document.querySelector('.main_content');
 
     containerAddTask.addEventListener('click', async (e) => {
         const eventDel = e.target.dataset.delete;
-        const userId = auth.currentUser.uid;
+        const userId = user.uid;
 
         if (eventDel) {
             await deleteDoc(doc(db, `teste-list/${userId}/todolist/`, eventDel));

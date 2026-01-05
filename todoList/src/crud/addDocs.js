@@ -7,6 +7,8 @@ import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/
 const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
+    if (!user) return
+
     const idInputTask = document.getElementById('idInputTask');
     const buttonTask = document.getElementById('button-task');
 
@@ -16,7 +18,7 @@ onAuthStateChanged(auth, (user) => {
         if (eventInput) {
             document.querySelector('#idInputTask').value = '';
             
-            const userId = auth.currentUser.uid;
+            const userId = user.uid;
             
             try {
 

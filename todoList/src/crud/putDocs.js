@@ -6,11 +6,13 @@ import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/
 const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
+    if (!user) return
+
     const containerAddTask = document.querySelector('.main_content');
 
     containerAddTask.addEventListener('change', async (e) => {
         const eventCheck = e.target.dataset.checked;
-        const userId = auth.currentUser.uid;
+        const userId = user.uid;
 
         if (eventCheck) {
             const checkRef = doc(db, `teste-list/${userId}/todolist/`, eventCheck);
