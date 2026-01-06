@@ -1,5 +1,5 @@
 import { db } from '../config/firestore.js';
-import { collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js';
+import { collection, onSnapshot,  query, orderBy } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js';
 
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
 
@@ -12,7 +12,11 @@ onAuthStateChanged(auth, (user) => {
     }
 
 	const userId = user.uid;
-	const onSnap = (callback, errorCallback) => onSnapshot(collection(db, `teste-list/${userId}/todolist/`), callback, errorCallback);
+	const getQuery = query(
+		collection(db, `teste-list/${userId}/todolist/`),
+		orderBy("createdAt", "desc")
+	)
+	const onSnap = (callback, errorCallback) => onSnapshot(getQuery, callback, errorCallback);
 
 	onSnap(querySnapshot => {
 		document.querySelector('#add-task').innerHTML = '';

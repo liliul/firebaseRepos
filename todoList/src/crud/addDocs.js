@@ -1,5 +1,5 @@
 import { db } from '../config/firestore.js'
-import { collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js'
+import { collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js'
 import { mensagem } from '../utils/mensagem.js';
 
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
@@ -24,7 +24,8 @@ onAuthStateChanged(auth, (user) => {
 
                 await addDoc(collection(db, `teste-list/${userId}/todolist`), {
                     input: eventInput,
-                    taskCheck: ""
+                    taskCheck: "",
+                    createdAt: serverTimestamp()
                 })
 
                 mensagem('Tarefa Criada com Sucesso!');
